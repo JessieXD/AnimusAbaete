@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"  href="../../semantic/semantic.css">
+    <meta charset="UTF-8">
+	<title>Cadastro</title>
+</head>
+<style type="text/css">
+    body{
+        background-color: #1B1C1D;
+    }
+</style>
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="four wide column">
+    <h2 class="ui small circular image">
+      <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"/></a>
+    </h2>
+    <form class="ui large form">
+      <div class="field">
+        <div class="one field">
+          <div class="field">
+            <input type="text" name="nome" placeholder="Nome">
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="one field">
+          <div class="field">
+            <input type="text" name="cnpj" placeholder="CNPJ">
+          </div>
+        </div>
+      </div>
+
+      <div class="two fields">
+        <div class="field">
+          <select class="ui fluid dropdown">
+            <option value="">Estado</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MI">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RA">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </div>
+        <div class="field">
+          <select class="ui fluid dropdown">
+            <option value="">Cidade</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <input type="date" name="data_fundacao" placeholder="Data de fundação">
+      </div>
+      <div class="field">
+        <input type="text" name="finalidade_esp" placeholder="Finalidade Especifica">
+      </div>
+      <div class="field">
+        <input type="tel" name="finalidade_esp" placeholder="Telefone">
+      </div>
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <input type="password" name="senha" placeholder="Senha">
+          </div>
+          <div class="field">
+            <input type="password" name="confirmacaosenha" placeholder="Confirmação de senha">
+          </div>
+        </div>
+      </div>
+    </form>
+        <div class="field">
+            <a href="perfil_ong.php"><div class="ui fluid large blue submit button">Cadastrar</div></a>
+        </div>
+        <div class="ui inverted message">
+            Já é cadastrado? <a href="login.html">Entrar</a>
+        </div>
+  </div>
+</div>
+</body>
+</html>

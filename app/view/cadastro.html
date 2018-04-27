@@ -1,0 +1,41 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['usuario_online']) OR !($_SESSION['usuario_online'] == true) ){
+        header('Location: login.php');
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet"  href="../../semantic/semantic.css">
+
+	<title>Document</title>
+</head>
+<style type="text/css">
+  body{
+    background-color: #1B1C1D;
+  }
+</style>
+<body>
+
+
+<div class="ui middle aligned center aligned grid">
+    <div class="four wide column">
+        <h2 class="ui blue small circular image">
+            <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"></a>
+        </h2>
+        <form class="ui large form">
+            <div class="ui inverted stacked segment">
+                <a href="cad_ong.html"><div class="ui fluid large blue submit button"  >ONG</div></a>
+                <p></p>
+                <a href="cad_voluntario.html"><div class="ui fluid large blue submit button">Voluntário</div></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
