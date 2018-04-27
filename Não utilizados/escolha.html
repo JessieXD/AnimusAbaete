@@ -1,0 +1,42 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['usuario_online']) OR !($_SESSION['usuario_online'] == true) ){
+        header('Location: login.php');
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<link rel="stylesheet" href="style.css">--> 
+    <link rel="stylesheet"  href="../semantic/semantic.css">
+    <meta charset="UTF-8">
+
+	<title>Document</title>
+</head>
+<style type="text/css">
+    body{
+        background-color: #1B1C1D;
+    }
+</style>
+<body>
+<br>
+<br>
+<br>
+
+<div class="ui middle aligned center aligned grid">
+<div class="">
+<a href="../app/view/cad_ong.html">
+<div class="ui fluid large teal submit button"  ><i class="edit icon"></i>ONG</div>
+</a>
+<a href="../app/view/cad_ong.html">
+<div class="ui fluid large teal submit button"  ><i class="edit icon"></i>ONG</div>
+</a>
+</div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
