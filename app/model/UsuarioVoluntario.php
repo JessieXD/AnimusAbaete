@@ -24,4 +24,6 @@ class UsuarioVoluntario{
         $this->idade        = $idade;
         $this->bio          = $bio;
     }
+
+
 }

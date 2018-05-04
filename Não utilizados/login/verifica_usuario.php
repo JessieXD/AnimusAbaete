@@ -22,7 +22,7 @@
             $_SESSION['usuario_online'] = true;
 
             //redirecionar
-            header('Location: index.php');
+            header('Location: ../../index.html');
 
         }
     }

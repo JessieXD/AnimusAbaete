@@ -13,21 +13,21 @@
 <body>
 <div class="ui middle aligned center aligned grid">
   <div class="four wide column">
+    <br>
     <h2 class="ui small circular image">
       <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"></a>
     </h2>
-    <form class="ui large form">
-      <div class="field">
-        <div class="two fields">
-          <div class="field">
-            <input type="text" name="nome" placeholder="Nome">
-          </div>
-          <div class="field">
-            <input type="text" name="sobrenome" placeholder="Sobrenome">
-          </div>
-        </div>
-      </div>
 
+    <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarVol">
+      <div class="field">
+        <input type="text" name="nome" placeholder="Nome">
+      </div>
+      <div class="field">
+        <input type="text" name="user" placeholder="Login">
+      </div>
+      <div class="field">
+        <input type="email" name="email" placeholder="E-mail">
+      </div>
       <div class="two fields">
         <div class="field">
           <select class="ui fluid dropdown">
@@ -69,7 +69,7 @@
       <div class="fields">
         <div class="sixteen wide field">
           <div class="three fields">
-            <div class="field">
+            <div class="field" name="idade">
               <select class="ui fluid search dropdown" name="card[expire-month]">
                 <option value="">Dia</option>
                 <option value="1">1</option>
@@ -123,7 +123,7 @@
               </select>
             </div>
             <div class="field">
-              <select class="ui fluid search dropdown" name="ano">
+              <select class="ui fluid " name="ano">
                 <option value="">Ano</option>
               </select>
             </div>
@@ -148,13 +148,11 @@
           </div>
         </div>
       </div>
+      <button class="ui fluid large blue submit button" >Cadastrar</button>
     </form>
 
-    <div class="field">
-      <a href="perfil.php"><div class="ui fluid large blue submit button">Cadastrar</div></a>
-    </div>
     <div class="ui inverted message">
-      Já é cadastrado? <a href="login.html">Entrar</a>
+      Já é cadastrado? <a href="login.php">Entrar</a>
     </div>
   </div>
 </div>
@@ -173,7 +171,7 @@
           <a href="index.html" class="item">
             Página Inicial
           </a>
-          <a href="login.html" class="item">
+          <a href="login.php" class="item">
             Login
           </a>
           <a class="active item">
