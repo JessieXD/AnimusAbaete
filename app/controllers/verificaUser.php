@@ -21,13 +21,14 @@ foreach ($usuarios as $usuario){
 
         $usuario_existe = true;
         //deu certo;
+        $_SESSION['cod_user']       = $usuario->cod_user;
         $_SESSION['usuario_nome']   = $_POST['nome'];
-        $_SESSION['usuario_user']  = $user;
+        $_SESSION['usuario_user']   = $user;
         $_SESSION['usuario_senha']  = $senha;
         $_SESSION['usuario_online'] = true;
 
         //redirecionar
-        header('Location: ../view/perfil.php');
+        header('Location: ../view/perfil.php?user='.$usuario->cod_user);
 
     }
 }

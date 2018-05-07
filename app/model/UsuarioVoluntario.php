@@ -11,7 +11,7 @@ class UsuarioVoluntario{
     public $idade;
     public $bio;
 
-    public function __construct($cod_user = null, $regiao, $senha, $email, $nome, $perfil, $user, $sexo, $idade, $bio){
+    public function __construct($cod_user = null, $regiao , $senha, $email, $nome, $perfil, $user, $sexo, $idade, $bio){
 
         $this->cod_user     = $cod_user;
         $this->regiao       = $regiao;

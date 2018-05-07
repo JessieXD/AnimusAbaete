@@ -1,4 +1,16 @@
-<?php require_once "cabecalho.php"; ?>
+<?php
+
+    require_once "cabecalho.php";
+    require_once "../model/CrudUsuarioVoluntario.php";
+
+    $crud = new CrudUsuarioVoluntario();
+
+    $cod     = $_GET['user'];
+    $usuario = $crud->getUsuarioVoluntario($cod);
+
+//    print_r($produto);
+//    exit();
+?>
 
 <div class="ui three column grid">
     <div class="column">
@@ -6,7 +18,7 @@
     </div>
 	<div class="column">
 	    <p></p>
-		<h2 class="ui center aligned icon header"> Jutyara Mendes</h2>
+		<h2 class="ui center aligned icon header"><?=$usuario->nome?></h2>
     </div>
 	<div class="column">
 		<button class="ui blue button right floated"><i class="edit icon"></i>Editar</button>
@@ -17,7 +29,7 @@
   <div class="column">
     <div class="ui raised segment">
       <a class="ui blue ribbon label">Biografia</a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec metus leo, condimentum et maximus vel, vehicula non massa. Vestibulum tellus est, molestie sed velit et, luctus tempor mi. Cras maximus neque metus, et vestibulum lacus tincidunt vel. Curabitur iaculis massa turpis, quis lobortis diam pharetra vel. Vestibulum vitae porttitor enim, eu egestas dolor. Aenean varius mi ac mi pretium ullamcorper. Duis fringilla ligula vitae justo fermentum, in finibus diam dignissim. Proin vulputate, justo et tincidunt porta, arcu leo ultricies enim, eget facilisis ligula massa non justo. Etiam quis tortor euismod, scelerisque massa nec, euismod lacus. Phasellus porta tellus tempus, suscipit sem ut, finibus urna. Vivamus pulvinar lorem eget facilisis gravida.</p>
+      <p><?=$usuario->bio?></p>
       <p></p>
       <div class="ui divider"></div>
       <a class="ui blue ribbon label">Ranking</a>

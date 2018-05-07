@@ -14,6 +14,21 @@
 	    </div>
 
 	    <div class="right menu">
+            <?php
+            switch ($_GET['item']){
+                case 1:
+                    echo '<a href="pag_inicial_logado.php" class="active item">Página Inicial</a>';
+                    break;
+                case 2:
+                    echo '<a href="procura.php" class="active item">Procurar ONG</a>';
+                    break;
+                case 3:
+                    echo '<a href="perfil.php" class="active item">Perfil</a>';
+                    break;
+                case 4:
+                    echo '<a href="perfil.php" class="active item">Perfil</a>';
+            }
+            ?>
 	    	<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
 	    	<a href="procura.php" class="item">Procurar ONG</a>
 			<a href="perfil.php" class="active item">Perfil</a>

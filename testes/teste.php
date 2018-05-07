@@ -11,7 +11,7 @@ require_once '../app/model/UsuarioVoluntario.php';
 
 $user = new UsuarioVoluntario('','SUL', '1234', 'lucas@gmail.com', 'lucas', 'lalala', 'lucas', 'masc', '10/11/1999','lala');
 $crud = new CrudUsuarioVoluntario();
-$crud->salvar($user);
+$crud->getUsuarioVoluntario(2);
 
 
 
