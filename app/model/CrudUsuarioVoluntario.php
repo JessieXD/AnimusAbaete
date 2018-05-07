@@ -11,7 +11,7 @@ require_once "UsuarioVoluntario.php";
 
 class CrudUsuarioVoluntario{
     private $conexao;
-    private $usuario;
+    public $usuario;
 
     public function __construct(){
 
