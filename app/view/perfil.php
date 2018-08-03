@@ -1,5 +1,7 @@
 <?php
 
+$_GET['item'] = 3;
+
     require_once "cabecalho.php";
     require_once "../model/CrudUsuarioVoluntario.php";
 
@@ -28,32 +30,21 @@
 <div class="ui two column grid">
   <div class="column">
     <div class="ui raised segment">
-      <a class="ui blue ribbon label">Biografia</a>
+      <a class="ui blue ribbon label"><i class="address card icon"></i>Biografia</a>
       <p><?=$usuario->bio?></p>
       <p></p>
       <div class="ui divider"></div>
-      <a class="ui blue ribbon label">Ranking</a>
-      <p>1º Lugar: <a class="ui label">
-      <img class="ui right spaced avatar image" src="../../imagens/henrique.jpg">Henrique</a></p>
-      <p>2º Lugar: <a class="ui label">
-      <img class="ui right spaced avatar image" src="../../imagens/juty.jpg">Jutyara</a></p>
-      <p>3º Lugar: <a class="ui label">
-      <img class="ui right spaced avatar image" src="../../imagens/jessica.jpg">Jessica</a></p>
+      <a class="ui blue ribbon label"><i class="info icon"></i>Info</a>
+      <p></p>
+      <p><i class="linkify icon"></i><a href="https://twitter.com/ladygaga">https://twitter.com/ladygaga</a></p>
+      <p><i class="birthday cake icon"></i></p>
+      <p><i class="map pin icon"></i></p>
       <p></p>
     </div>
   </div>
   <div class="column">
     <div class="ui raised segment">
-      <a class="ui blue right ribbon label">Amigos</a>
-      <p></p>
-      	<p><a class="ui label">
-  		<img class="ui right spaced avatar image" src="../../imagens/henrique.jpg">Henrique</a>
-	    <a class="ui label">
-		<img class="ui right spaced avatar image" src="../../imagens/jessica.jpg">Jessica</a>
-	    </p>
-      <p></p>
-      <div class="ui divider"></div>
-      <a class="ui blue right ribbon label">Ong's</a>
+      <a class="ui blue right ribbon label"><i class="users icon"></i>Ong's</a>
       <p><a class="ui label">
   		<img class="ui right spaced avatar image" src="../../imagens/1.jpg">Mundo Gato</a>
 		<a class="ui label">

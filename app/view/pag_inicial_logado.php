@@ -1,4 +1,6 @@
-<?php require_once "cabecalho.php"; ?>
+<?php
+$_GET['item'] = 1;
+require_once "cabecalho.php"; ?>
 
 
 <div class="ui six cards">

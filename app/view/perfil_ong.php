@@ -1,4 +1,7 @@
-<?php require_once 'cabecalho.php';?>
+<?php
+
+$_GET['item'] = 2;
+require_once 'cabecalho.php';?>
 
 	<div class="ui three column grid">
 		<div class="column">

@@ -1,4 +1,6 @@
-<?php require_once 'cabecalho.php'; ?>
+<?php
+$_GET['item'] = 2;
+require_once 'cabecalho.php'; ?>
 		<div class="ui right aligned category search">
   			<div class="ui icon input">
     			<input class="prompt" type="text" placeholder="Procurar ONG...">
