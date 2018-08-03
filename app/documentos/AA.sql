@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 27-Abr-2018 às 15:27
+-- Tempo de geração: 07/05/2018 às 14:27
 -- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.22-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,16 +17,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `AA`
+-- Banco de dados: `AA`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ATENDIMENTO`
+-- Estrutura para tabela `atendimento`
 --
 
-CREATE TABLE `ATENDIMENTO` (
+CREATE TABLE `atendimento` (
   `cod_especialidade` smallint(6) DEFAULT NULL,
   `cod_user` smallint(6) DEFAULT NULL,
   `cnpj` int(11) DEFAULT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE `ATENDIMENTO` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ATIVIDADES`
+-- Estrutura para tabela `atividades`
 --
 
-CREATE TABLE `ATIVIDADES` (
+CREATE TABLE `atividades` (
   `descricao` varchar(600) DEFAULT NULL,
   `titulo` varchar(100) DEFAULT NULL,
   `data` date DEFAULT NULL,
@@ -50,10 +50,10 @@ CREATE TABLE `ATIVIDADES` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `ATIVIDADES`
+-- Fazendo dump de dados para tabela `atividades`
 --
 
-INSERT INTO `ATIVIDADES` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`) VALUES
+INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`) VALUES
 ('Vamos fazer um faxinão no ZOO.', '+ verde - lixo ', '2018-09-20', '15:30:00', 5, 1),
 ('Vamos juntos resgatar a história operária da cidade. ', 'Redescobrindo a História', '2018-06-14', '16:00:00', 15, 2),
 ('Multirão de exames preventivo (testes de glicemia)', 'Diabetes, tenho ou não?', '2018-04-30', '09:00:00', 20, 3);
@@ -61,7 +61,7 @@ INSERT INTO `ATIVIDADES` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `avaliacao`
+-- Estrutura para tabela `avaliacao`
 --
 
 CREATE TABLE `avaliacao` (
@@ -74,7 +74,7 @@ CREATE TABLE `avaliacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `avaliacao`
+-- Fazendo dump de dados para tabela `avaliacao`
 --
 
 INSERT INTO `avaliacao` (`nota`, `cod_atividade`, `cod_user`, `cnpj`, `user`, `ATIVIDADES_cod_atividade`) VALUES
@@ -85,10 +85,10 @@ INSERT INTO `avaliacao` (`nota`, `cod_atividade`, `cod_user`, `cnpj`, `user`, `A
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `CATEGORIA`
+-- Estrutura para tabela `categoria`
 --
 
-CREATE TABLE `CATEGORIA` (
+CREATE TABLE `categoria` (
   `descricao` varchar(600) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL,
   `cod_categoria` smallint(6) NOT NULL
@@ -97,10 +97,10 @@ CREATE TABLE `CATEGORIA` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ESPECIALIDADE`
+-- Estrutura para tabela `especialidade`
 --
 
-CREATE TABLE `ESPECIALIDADE` (
+CREATE TABLE `especialidade` (
   `nome` varchar(60) DEFAULT NULL,
   `cod_especialidade` smallint(6) NOT NULL,
   `descricao` varchar(600) DEFAULT NULL,
@@ -110,20 +110,20 @@ CREATE TABLE `ESPECIALIDADE` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `LOCAL`
+-- Estrutura para tabela `local`
 --
 
-CREATE TABLE `LOCAL` (
+CREATE TABLE `local` (
   `cod_local` smallint(6) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `endereco` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `LOCAL`
+-- Fazendo dump de dados para tabela `local`
 --
 
-INSERT INTO `LOCAL` (`cod_local`, `nome`, `endereco`) VALUES
+INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
 (1, 'Zoobotânico de Joinville', 'R. Pastor Guilherme Ráu, 462 - Saguaçu, Joinville'),
 (2, 'Arquivo Histórico de Joinville', 'Av. Hermann August Lepper, 650 - Saguaçu, Joinville'),
 (3, 'ICED', 'Rua Alexandre Doehler, 129 - sala 1005 - Centro, Joinville ');
@@ -131,19 +131,19 @@ INSERT INTO `LOCAL` (`cod_local`, `nome`, `endereco`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `LOCAL_ATIVIDADE`
+-- Estrutura para tabela `local_atividade`
 --
 
-CREATE TABLE `LOCAL_ATIVIDADE` (
+CREATE TABLE `local_atividade` (
   `cod_local` smallint(6) NOT NULL,
   `cod_atividade` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `LOCAL_ATIVIDADE`
+-- Fazendo dump de dados para tabela `local_atividade`
 --
 
-INSERT INTO `LOCAL_ATIVIDADE` (`cod_local`, `cod_atividade`) VALUES
+INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
 (1, 1),
 (2, 2),
 (3, 3);
@@ -151,7 +151,7 @@ INSERT INTO `LOCAL_ATIVIDADE` (`cod_local`, `cod_atividade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `participacao`
+-- Estrutura para tabela `participacao`
 --
 
 CREATE TABLE `participacao` (
@@ -165,12 +165,12 @@ CREATE TABLE `participacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `USER`
+-- Estrutura para tabela `usuario`
 --
 
-CREATE TABLE `USER` (
+CREATE TABLE `usuario` (
   `cod_user` smallint(6) NOT NULL,
-  `região` varchar(20) DEFAULT NULL,
+  `regiao` varchar(20) DEFAULT NULL,
   `senha` int(11) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL,
@@ -187,10 +187,10 @@ CREATE TABLE `USER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `USER`
+-- Fazendo dump de dados para tabela `usuario`
 --
 
-INSERT INTO `USER` (`cod_user`, `região`, `senha`, `email`, `nome`, `perfil`, `cnpj`, `nome_responsavel`, `end_sede`, `fin_espe_ong`, `desc_ong`, `user`, `idade`, `sexo`, `bio`) VALUES
+INSERT INTO `usuario` (`cod_user`, `regiao`, `senha`, `email`, `nome`, `perfil`, `cnpj`, `nome_responsavel`, `end_sede`, `fin_espe_ong`, `desc_ong`, `user`, `idade`, `sexo`, `bio`) VALUES
 (2, 'SUL', 25, 'annalisa.wyatt@massa.com', 'Annalisa Wyatt', NULL, NULL, NULL, NULL, NULL, NULL, 'Anna', '1962-06-29', 'fem', 'Amo o verde'),
 (4, 'SUL', 25, 'veronika_houghton@magna.com', 'Veronika Houghton', NULL, NULL, NULL, NULL, NULL, NULL, 'Vee', '1976-12-14', 'fem', 'sindicalista'),
 (8, 'SUL', 25, 'gwen.nichols@nam.com', 'Gwen Nichols', NULL, NULL, NULL, NULL, NULL, NULL, 'GG', '1986-10-18', 'mas', 'profissional da saúde'),
@@ -199,106 +199,106 @@ INSERT INTO `USER` (`cod_user`, `região`, `senha`, `email`, `nome`, `perfil`, `
 (14, 'SUL', 26, 'saude_mulher@odio.com', 'Mulheres pela Saúde', NULL, 969369, 'Jewel Redmond', 'Rua das Palmeiras, Joinville', 'Em conjusto com o mínicipio, ajudar na melhoria da saúde das mulheres', 'Saúde feminina importa', NULL, NULL, NULL, NULL);
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `ATENDIMENTO`
+-- Índices de tabela `atendimento`
 --
-ALTER TABLE `ATENDIMENTO`
+ALTER TABLE `atendimento`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_ATENDIMENTO_ESPECIALIDADE1_idx` (`ESPECIALIDADE_cod_especialidade`);
 
 --
--- Indexes for table `ATIVIDADES`
+-- Índices de tabela `atividades`
 --
-ALTER TABLE `ATIVIDADES`
+ALTER TABLE `atividades`
   ADD PRIMARY KEY (`cod_atividade`);
 
 --
--- Indexes for table `avaliacao`
+-- Índices de tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_avaliacao_ATIVIDADES1_idx` (`ATIVIDADES_cod_atividade`);
 
 --
--- Indexes for table `CATEGORIA`
+-- Índices de tabela `categoria`
 --
-ALTER TABLE `CATEGORIA`
+ALTER TABLE `categoria`
   ADD PRIMARY KEY (`cod_categoria`);
 
 --
--- Indexes for table `ESPECIALIDADE`
+-- Índices de tabela `especialidade`
 --
-ALTER TABLE `ESPECIALIDADE`
+ALTER TABLE `especialidade`
   ADD PRIMARY KEY (`cod_especialidade`),
   ADD KEY `cod_categoria` (`cod_categoria`);
 
 --
--- Indexes for table `LOCAL`
+-- Índices de tabela `local`
 --
-ALTER TABLE `LOCAL`
+ALTER TABLE `local`
   ADD PRIMARY KEY (`cod_local`);
 
 --
--- Indexes for table `LOCAL_ATIVIDADE`
+-- Índices de tabela `local_atividade`
 --
-ALTER TABLE `LOCAL_ATIVIDADE`
+ALTER TABLE `local_atividade`
   ADD KEY `fk_LOCAL_ATIVIDADE_ATIVIDADES1_idx` (`cod_atividade`),
   ADD KEY `fk_LOCAL_ATIVIDADE_LOCAL1_idx` (`cod_local`);
 
 --
--- Indexes for table `participacao`
+-- Índices de tabela `participacao`
 --
 ALTER TABLE `participacao`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_participacao_ATIVIDADES1_idx` (`ATIVIDADES_cod_atividade`);
 
 --
--- Indexes for table `USER`
+-- Índices de tabela `usuario`
 --
-ALTER TABLE `USER`
+ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_user`);
 
 --
--- Constraints for dumped tables
+-- Restrições para dumps de tabelas
 --
 
 --
--- Limitadores para a tabela `ATENDIMENTO`
+-- Restrições para tabelas `atendimento`
 --
-ALTER TABLE `ATENDIMENTO`
-  ADD CONSTRAINT `ATENDIMENTO_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `USER` (`cod_user`),
-  ADD CONSTRAINT `fk_ATENDIMENTO_ESPECIALIDADE1` FOREIGN KEY (`ESPECIALIDADE_cod_especialidade`) REFERENCES `ESPECIALIDADE` (`cod_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `atendimento`
+  ADD CONSTRAINT `atendimento_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`),
+  ADD CONSTRAINT `fk_ATENDIMENTO_ESPECIALIDADE1` FOREIGN KEY (`ESPECIALIDADE_cod_especialidade`) REFERENCES `especialidade` (`cod_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `avaliacao`
+-- Restrições para tabelas `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `USER` (`cod_user`),
-  ADD CONSTRAINT `fk_avaliacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `ATIVIDADES` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`),
+  ADD CONSTRAINT `fk_avaliacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `ESPECIALIDADE`
+-- Restrições para tabelas `especialidade`
 --
-ALTER TABLE `ESPECIALIDADE`
-  ADD CONSTRAINT `ESPECIALIDADE_ibfk_1` FOREIGN KEY (`cod_categoria`) REFERENCES `CATEGORIA` (`cod_categoria`),
-  ADD CONSTRAINT `ESPECIALIDADE_ibfk_2` FOREIGN KEY (`cod_categoria`) REFERENCES `CATEGORIA` (`cod_categoria`);
+ALTER TABLE `especialidade`
+  ADD CONSTRAINT `especialidade_ibfk_1` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`),
+  ADD CONSTRAINT `especialidade_ibfk_2` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`);
 
 --
--- Limitadores para a tabela `LOCAL_ATIVIDADE`
+-- Restrições para tabelas `local_atividade`
 --
-ALTER TABLE `LOCAL_ATIVIDADE`
-  ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_ATIVIDADES1` FOREIGN KEY (`cod_atividade`) REFERENCES `ATIVIDADES` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_LOCAL1` FOREIGN KEY (`cod_local`) REFERENCES `LOCAL` (`cod_local`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `local_atividade`
+  ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_ATIVIDADES1` FOREIGN KEY (`cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_LOCAL1` FOREIGN KEY (`cod_local`) REFERENCES `local` (`cod_local`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `participacao`
+-- Restrições para tabelas `participacao`
 --
 ALTER TABLE `participacao`
-  ADD CONSTRAINT `fk_participacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `ATIVIDADES` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `USER` (`cod_user`);
+  ADD CONSTRAINT `fk_participacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
