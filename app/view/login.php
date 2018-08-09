@@ -19,7 +19,7 @@
 <div class="ui middle aligned center aligned grid">
   <div class="four wide column">
     <h2 class="ui teal small circular image">
-      <a href="../../index.html"><img src="../../imagens/logo.png" class="image"></a>
+      <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"></a>
     </h2>
     <div>
     </div>

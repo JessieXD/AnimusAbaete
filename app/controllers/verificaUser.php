@@ -35,5 +35,5 @@ foreach ($usuarios as $usuario){
 
 if (!$usuario_existe){
     echo "ih meu nego";
-    header('Location: ../view/login.php');
+
 }

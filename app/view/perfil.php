@@ -16,15 +16,17 @@ $_GET['item'] = 3;
 
 <div class="ui three column grid">
     <div class="column">
-	    <img class="ui small circular image" src="../../imagens/juty.jpg">
+	    <img class="ui small circular image" src=../../imagens/<?=$usuario->imagem?>>
     </div>
 	<div class="column">
 	    <p></p>
 		<h2 class="ui center aligned icon header"><?=$usuario->nome?></h2>
     </div>
 	<div class="column">
-		<button class="ui blue button right floated"><i class="edit icon"></i>Editar</button>
-	</div>
+        <a href="Editar.php?user=2">
+            <button class="ui blue button right floated"><i class="edit icon"></i>Editar</button>
+        </a>
+    </div>
 </div>
 
 <div class="ui two column grid">
