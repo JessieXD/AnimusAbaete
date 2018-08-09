@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 07/05/2018 às 14:27
+-- Generation Time: 09-Ago-2018 às 16:52
 -- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
+-- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `AA`
+-- Database: `AA`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atendimento`
+-- Estrutura da tabela `atendimento`
 --
 
 CREATE TABLE `atendimento` (
@@ -37,7 +37,7 @@ CREATE TABLE `atendimento` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividades`
+-- Estrutura da tabela `atividades`
 --
 
 CREATE TABLE `atividades` (
@@ -50,7 +50,7 @@ CREATE TABLE `atividades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `atividades`
+-- Extraindo dados da tabela `atividades`
 --
 
 INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao`
+-- Estrutura da tabela `avaliacao`
 --
 
 CREATE TABLE `avaliacao` (
@@ -74,7 +74,7 @@ CREATE TABLE `avaliacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `avaliacao`
+-- Extraindo dados da tabela `avaliacao`
 --
 
 INSERT INTO `avaliacao` (`nota`, `cod_atividade`, `cod_user`, `cnpj`, `user`, `ATIVIDADES_cod_atividade`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `avaliacao` (`nota`, `cod_atividade`, `cod_user`, `cnpj`, `user`, `A
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -97,7 +97,7 @@ CREATE TABLE `categoria` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `especialidade`
+-- Estrutura da tabela `especialidade`
 --
 
 CREATE TABLE `especialidade` (
@@ -110,7 +110,7 @@ CREATE TABLE `especialidade` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `local`
+-- Estrutura da tabela `local`
 --
 
 CREATE TABLE `local` (
@@ -120,7 +120,7 @@ CREATE TABLE `local` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `local`
+-- Extraindo dados da tabela `local`
 --
 
 INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `local_atividade`
+-- Estrutura da tabela `local_atividade`
 --
 
 CREATE TABLE `local_atividade` (
@@ -140,7 +140,7 @@ CREATE TABLE `local_atividade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `local_atividade`
+-- Extraindo dados da tabela `local_atividade`
 --
 
 INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
@@ -151,7 +151,7 @@ INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `participacao`
+-- Estrutura da tabela `participacao`
 --
 
 CREATE TABLE `participacao` (
@@ -165,7 +165,7 @@ CREATE TABLE `participacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -183,118 +183,119 @@ CREATE TABLE `usuario` (
   `user` varchar(10) DEFAULT NULL,
   `idade` date DEFAULT NULL,
   `sexo` varchar(3) DEFAULT NULL,
-  `bio` varchar(600) DEFAULT NULL
+  `bio` varchar(600) DEFAULT NULL,
+  `imagem` varchar(100) DEFAULT 'pre_definido.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`cod_user`, `regiao`, `senha`, `email`, `nome`, `perfil`, `cnpj`, `nome_responsavel`, `end_sede`, `fin_espe_ong`, `desc_ong`, `user`, `idade`, `sexo`, `bio`) VALUES
-(2, 'SUL', 25, 'annalisa.wyatt@massa.com', 'Annalisa Wyatt', NULL, NULL, NULL, NULL, NULL, NULL, 'Anna', '1962-06-29', 'fem', 'Amo o verde'),
-(4, 'SUL', 25, 'veronika_houghton@magna.com', 'Veronika Houghton', NULL, NULL, NULL, NULL, NULL, NULL, 'Vee', '1976-12-14', 'fem', 'sindicalista'),
-(8, 'SUL', 25, 'gwen.nichols@nam.com', 'Gwen Nichols', NULL, NULL, NULL, NULL, NULL, NULL, 'GG', '1986-10-18', 'mas', 'profissional da saúde'),
-(10, 'SUL', 26, 'fzc@nibh.com', 'Fundação ZOO Catarinense', NULL, 10101212, 'Claud Yates', 'Av. dos estado, Florianopolis', 'Ecoologia e meio ambiente', 'fazendo SC mais verde', '', NULL, NULL, NULL),
-(12, 'SUL', 26, 'ihcs@massa.com', 'IHCS', NULL, 5262562, 'Mayme Whitaker', 'R. Jaguaruna, 147 - Centro, Joinville', 'Pesquisa e Extensão', 'Fazendo a história contecer', NULL, NULL, NULL, NULL),
-(14, 'SUL', 26, 'saude_mulher@odio.com', 'Mulheres pela Saúde', NULL, 969369, 'Jewel Redmond', 'Rua das Palmeiras, Joinville', 'Em conjusto com o mínicipio, ajudar na melhoria da saúde das mulheres', 'Saúde feminina importa', NULL, NULL, NULL, NULL);
+INSERT INTO `usuario` (`cod_user`, `regiao`, `senha`, `email`, `nome`, `perfil`, `cnpj`, `nome_responsavel`, `end_sede`, `fin_espe_ong`, `desc_ong`, `user`, `idade`, `sexo`, `bio`, `imagem`) VALUES
+(2, 'SUL', 25, 'annalisa.wyatt@massa.com', 'Annalisa Wyatt', NULL, NULL, NULL, NULL, NULL, NULL, 'Anna', '1962-06-29', 'fem', 'Amo o verde', 'pre_definido.jpg'),
+(4, 'SUL', 25, 'veronika_houghton@magna.com', 'Veronika Houghton', NULL, NULL, NULL, NULL, NULL, NULL, 'Vee', '1976-12-14', 'fem', 'sindicalista', 'pre_definido.jpg'),
+(8, 'SUL', 25, 'gwen.nichols@nam.com', 'Gwen Nichols', NULL, NULL, NULL, NULL, NULL, NULL, 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'pre_definido.jpg'),
+(10, 'SUL', 26, 'fzc@nibh.com', 'Fundação ZOO Catarinense', NULL, 10101212, 'Claud Yates', 'Av. dos estado, Florianopolis', 'Ecoologia e meio ambiente', 'fazendo SC mais verde', '', NULL, NULL, NULL, 'logo.jpg'),
+(12, 'SUL', 26, 'ihcs@massa.com', 'IHCS', NULL, 5262562, 'Mayme Whitaker', 'R. Jaguaruna, 147 - Centro, Joinville', 'Pesquisa e Extensão', 'Fazendo a história contecer', NULL, NULL, NULL, NULL, 'logo.jpg'),
+(14, 'SUL', 26, 'saude_mulher@odio.com', 'Mulheres pela Saúde', NULL, 969369, 'Jewel Redmond', 'Rua das Palmeiras, Joinville', 'Em conjusto com o mínicipio, ajudar na melhoria da saúde das mulheres', 'Saúde feminina importa', NULL, NULL, NULL, NULL, 'logo.jpg');
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `atendimento`
+-- Indexes for table `atendimento`
 --
 ALTER TABLE `atendimento`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_ATENDIMENTO_ESPECIALIDADE1_idx` (`ESPECIALIDADE_cod_especialidade`);
 
 --
--- Índices de tabela `atividades`
+-- Indexes for table `atividades`
 --
 ALTER TABLE `atividades`
   ADD PRIMARY KEY (`cod_atividade`);
 
 --
--- Índices de tabela `avaliacao`
+-- Indexes for table `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_avaliacao_ATIVIDADES1_idx` (`ATIVIDADES_cod_atividade`);
 
 --
--- Índices de tabela `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`cod_categoria`);
 
 --
--- Índices de tabela `especialidade`
+-- Indexes for table `especialidade`
 --
 ALTER TABLE `especialidade`
   ADD PRIMARY KEY (`cod_especialidade`),
   ADD KEY `cod_categoria` (`cod_categoria`);
 
 --
--- Índices de tabela `local`
+-- Indexes for table `local`
 --
 ALTER TABLE `local`
   ADD PRIMARY KEY (`cod_local`);
 
 --
--- Índices de tabela `local_atividade`
+-- Indexes for table `local_atividade`
 --
 ALTER TABLE `local_atividade`
   ADD KEY `fk_LOCAL_ATIVIDADE_ATIVIDADES1_idx` (`cod_atividade`),
   ADD KEY `fk_LOCAL_ATIVIDADE_LOCAL1_idx` (`cod_local`);
 
 --
--- Índices de tabela `participacao`
+-- Indexes for table `participacao`
 --
 ALTER TABLE `participacao`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_participacao_ATIVIDADES1_idx` (`ATIVIDADES_cod_atividade`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_user`);
 
 --
--- Restrições para dumps de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `atendimento`
+-- Limitadores para a tabela `atendimento`
 --
 ALTER TABLE `atendimento`
   ADD CONSTRAINT `atendimento_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`),
   ADD CONSTRAINT `fk_ATENDIMENTO_ESPECIALIDADE1` FOREIGN KEY (`ESPECIALIDADE_cod_especialidade`) REFERENCES `especialidade` (`cod_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `avaliacao`
+-- Limitadores para a tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`),
   ADD CONSTRAINT `fk_avaliacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `especialidade`
+-- Limitadores para a tabela `especialidade`
 --
 ALTER TABLE `especialidade`
   ADD CONSTRAINT `especialidade_ibfk_1` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`),
   ADD CONSTRAINT `especialidade_ibfk_2` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`);
 
 --
--- Restrições para tabelas `local_atividade`
+-- Limitadores para a tabela `local_atividade`
 --
 ALTER TABLE `local_atividade`
   ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_ATIVIDADES1` FOREIGN KEY (`cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_LOCAL1` FOREIGN KEY (`cod_local`) REFERENCES `local` (`cod_local`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `participacao`
+-- Limitadores para a tabela `participacao`
 --
 ALTER TABLE `participacao`
   ADD CONSTRAINT `fk_participacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
