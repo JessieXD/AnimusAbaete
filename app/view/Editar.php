@@ -1,5 +1,7 @@
 <?php
 
+$_GET['item'] = 3;
+
 require_once __DIR__."/../model/CrudUsuarioVoluntario.php";
 $crud = new CrudUsuarioVoluntario();
 $user =$_GET['user'];
@@ -9,29 +11,32 @@ $usuario = $crud->getUsuarioVoluntario($user);
 
 require_once "cabecalho.php";
 ?>
+    <div class="ui middle aligned center aligned grid">
+    <div class="four wide column">
+        <br>
+        <h2 class="ui small circular image">
+            <a href="../controllers/controlador.php?acao=editar"><img src="../../imagens/logo.jpg" class="image"></a>
+        </h2>
+        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarVol">
+            <div class="field">
+                <input type="text" name="nome" placeholder="Nome" value="<?= $usuario->nome ?>"  placeholder="<?= $usuario->nome ?>">
+            </div>
+            <div class="field">
+                <input type="password" name="user" placeholder="Senha" value="<?= $usuario->senha ?>"  placeholder="<?= $usuario->senha?>">
+            </div>
+            <div class="field">
+                <input type="email" name="email" placeholder="E-mail" value="<?= $usuario->email ?>"  placeholder="<?= $usuario->email?>">
+            </div>
+            <div class="field">
+                <input type="file" name="imagem" placeholder="Imagem" value="<?= $usuario->imagem ?>" placeholder="<?= $usuario->imagem?>">
+            </div>
+            <div class="field">
+                <input type="text" name="biografia" placeholder="Biografia" value="<?= $usuario->bio ?>" placeholder="<?= $usuario->bio?>">
+            </div>
+            <button class="ui fluid large blue submit button" >Alterar</button>
+            <br>
+    </div>
+    </div>
 
-    <!--Barra de busca-->
-    <br>
-    <br>
-
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Biografia</th>
-            <th>Nome</th>
-            <th>Imagem</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="../../imagens/<?= $usuario->imagem ?>" width="50px" height="50px"></td>
-                <td><a href=" ">Editar</a> |
-                    <a href=" "> Excluir</a></td>
-            </tr>
-
-        </tbody>
-    </table>
 
 <?php require_once "rodape.php";?>
-<?php // foreach ($listaProdutos as $produto): ?>
-

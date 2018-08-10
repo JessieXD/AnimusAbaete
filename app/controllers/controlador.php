@@ -19,3 +19,14 @@
 
         header('Location : ../view/perfil.php');
     }
+
+    if ($_GET['acao'] == 'editar'){
+
+        $usuario = new UsuarioVoluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
+        $crud    = new CrudUsuarioVoluntario();
+
+        $crud->editar($usuario);
+
+        header('Location : ../view/perfil.php');
+    }
+

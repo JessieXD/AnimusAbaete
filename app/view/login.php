@@ -23,7 +23,7 @@
     </h2>
     <div>
     </div>
-    <form class="ui large form" action="../controllers/verificaUser.php" method="post">
+    <form class="ui large form" action="../controllers/verificaUser.php?acao=login" method="post">
       <div class="ui inverted stacked segment">
         <div class="field">
           <div class="ui left icon input">

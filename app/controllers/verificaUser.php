@@ -4,15 +4,16 @@ require_once '../model/CrudUsuarioVoluntario.php';
 
 session_start();
 
-$user = $_POST['user'];
-$senha = $_POST['senha'];
-
+function login(){
 
 $usuarios = new CrudUsuarioVoluntario();
 $usuarios = $usuarios->getUsuariosVoluntario();
 
 $usuario_existe = false;
 
+
+$user  = $_POST['user'];
+$senha = $_POST['senha'];
 
 
 foreach ($usuarios as $usuario){
@@ -27,8 +28,12 @@ foreach ($usuarios as $usuario){
         $_SESSION['usuario_senha']  = $senha;
         $_SESSION['usuario_online'] = true;
 
+        $codigo        = $usuario->cod_user;
+        $_POST['codigo'] = $codigo;
+
+        //print_r($_POST);
         //redirecionar
-        header('Location: ../view/perfil.php?user='.$usuario->cod_user);
+        header('Location: ../view/perfil.php?codigo='.$codigo);
 
     }
 }
@@ -36,4 +41,19 @@ foreach ($usuarios as $usuario){
 if (!$usuario_existe){
     echo "ih meu nego";
 
+}
+}
+function logout(){
+    //sair
+    session_destroy();
+    //redirecionar
+    header("Location: ../../index.html");
+}
+
+//ROTAS
+if ($_GET['acao'] == 'login'){
+    login();
+}
+if ($_GET['acao'] == 'sair'){
+    logout();
 }

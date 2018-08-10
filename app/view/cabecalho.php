@@ -1,3 +1,13 @@
+<?php
+/*session_start();
+
+$existe = isset($_SESSION['esta_logado']);
+
+if ($existe == false){
+    header("location: login.php");
+}*/
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +42,7 @@
                     echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
                           <a href="procura.php" class="item">Procurar</a>
 			              <a href="perfil.php" class="active item">Perfil</a>
-	    	              <a class="item" href="../../index.html">Sair</a>';
+	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
             }
             ?>

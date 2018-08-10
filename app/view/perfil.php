@@ -7,7 +7,15 @@ $_GET['item'] = 3;
 
     $crud = new CrudUsuarioVoluntario();
 
-    $cod     = $_GET['user'];
+    session_start();
+
+    $existe = isset($_SESSION['usuario_online']);
+
+    if ($existe == false){
+        header("location: login.php");
+    }
+
+    $cod     = $_GET['codigo'];
     $usuario = $crud->getUsuarioVoluntario($cod);
 
 //    print_r($produto);
