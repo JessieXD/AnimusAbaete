@@ -7,13 +7,13 @@
  */
 
     require_once '../model/UsuarioOng.php';
-    require_once '../model/UsuarioVoluntario.php';
-    require_once '../model/CrudUsuarioVoluntario.php';
+    require_once '../model/Voluntario.php';
+    require_once '../model/CrudVoluntario.php';
 
     if ($_GET['acao'] == 'cadastrarVol'){
 
-        $usuario = new UsuarioVoluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
-        $crud    = new CrudUsuarioVoluntario();
+        $usuario = new Voluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
+        $crud    = new CrudVoluntario();
 
         $crud->salvar($usuario);
 
@@ -22,8 +22,8 @@
 
     if ($_GET['acao'] == 'editar'){
 
-        $usuario = new UsuarioVoluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
-        $crud    = new CrudUsuarioVoluntario();
+        $usuario = new Voluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
+        $crud    = new CrudVoluntario();
 
         $crud->editar($usuario);
 

@@ -1,13 +1,13 @@
 <?php
 
-require_once '../model/CrudUsuarioVoluntario.php';
+require_once '../model/CrudVoluntario.php';
 
 session_start();
 
 function login(){
 
-$usuarios = new CrudUsuarioVoluntario();
-$usuarios = $usuarios->getUsuariosVoluntario();
+$usuarios = new CrudVoluntario();
+$usuarios = $usuarios->getVoluntario();
 
 $usuario_existe = false;
 

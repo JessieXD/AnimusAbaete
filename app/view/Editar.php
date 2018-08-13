@@ -2,12 +2,12 @@
 
 $_GET['item'] = 3;
 
-require_once __DIR__."/../model/CrudUsuarioVoluntario.php";
-$crud = new CrudUsuarioVoluntario();
+require_once __DIR__ . "/../model/CrudVoluntario.php";
+$crud = new CrudVoluntario();
 $user =$_GET['user'];
 
 
-$usuario = $crud->getUsuarioVoluntario($user);
+$usuario = $crud->getVoluntario($user);
 
 require_once "cabecalho.php";
 ?>
