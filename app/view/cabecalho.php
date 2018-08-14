@@ -29,18 +29,28 @@ if ($existe == false){
                 case 1:
                     echo '<a href="pag_inicial_logado.php" class="active item">Página Inicial</a>
                           <a href="procura.php" class="item">Procurar</a>
+			              <a href="cad_ong.html" class="item">Cadastre sua ONG</a>
 			              <a href="perfil.php" class="item">Perfil</a>
-	    	              <a class="item" href="../../index.html">Sair</a>';
+	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
                 case 2:
                     echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
                           <a href="procura.php" class="active item">Procurar</a>
+			              <a href="cad_ong.html" class="item">Cadastre sua ONG</a>
 			              <a href="perfil.php" class="item">Perfil</a>
-	    	              <a class="item" href="../../index.html">Sair</a>';
+	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
                 case 3:
                     echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
                           <a href="procura.php" class="item">Procurar</a>
+			              <a href="cad_ong.html" class="item">Cadastre sua ONG</a>
+			              <a href="perfil.php" class="active item">Perfil</a>
+	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
+                    break;
+                case 4:
+                    echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
+                          <a href="procura.php" class="item">Procurar</a>
+			              <a href="cad_ong.html" class="item">Cadastre sua ONG</a>
 			              <a href="perfil.php" class="active item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;

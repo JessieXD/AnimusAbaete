@@ -29,7 +29,7 @@ class CrudVoluntario{
         $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', user = '$user->user', sexo = '$user->sexo', idade = '$user->idade', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site', WHERE cod_user = $user->cod_user ");
     }
 
-    public function getVoluntario(int $cod_user){
+    public function getVoluntario( $cod_user){
         $consulta = $this->conexao->query("SELECT * FROM usuario WHERE cod_user = $cod_user");
         $user = $consulta->fetch(PDO::FETCH_ASSOC);
 

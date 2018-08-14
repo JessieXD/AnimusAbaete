@@ -7,7 +7,7 @@ session_start();
 function login(){
 
 $usuarios = new CrudVoluntario();
-$usuarios = $usuarios->getVoluntario();
+$usuarios = $usuarios->getVoluntarios();
 
 $usuario_existe = false;
 

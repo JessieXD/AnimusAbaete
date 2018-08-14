@@ -1,36 +1,105 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	 <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="style.css">-->
-    <link rel="stylesheet"  href="../../semantic/semantic.css">
-
-	<title>Document</title>
+	<link rel="stylesheet"  href="../../semantic/semantic.css">
+  <meta charset="UTF-8">
+	<title>Cadastro</title>
 </head>
 <style type="text/css">
-  body{
-    background-color: #1B1C1D;
-  }
+    body{
+        background-color: #1B1C1D;
+    }
 </style>
 <body>
-
-
 <div class="ui middle aligned center aligned grid">
-    <div class="four wide column">
-        <h2 class="ui blue small circular image">
-            <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"></a>
-        </h2>
-        <form class="ui large form">
-            <div class="ui inverted stacked segment">
-                <a href="cad_ong.html"><div class="ui fluid large blue submit button"  >ONG</div></a>
-                <p></p>
-                <a href="cad_voluntario.html"><div class="ui fluid large blue submit button">Voluntário</div></a>
-            </div>
-        </form>
+  <div class="four wide column">
+    <br>
+    <h2 class="ui small circular image">
+      <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"></a>
+    </h2>
+
+    <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarVol">
+      <div class="field">
+        <input type="text" name="nome" placeholder="Nome">
+      </div>
+      <div class="field">
+        <input type="text" name="user" placeholder="Login">
+      </div>
+      <div class="field">
+        <input type="email" name="email" placeholder="E-mail">
+      </div>
+      <div class="field">
+        <input type="date" name="idade">
+      </div>
+      <div class="field">
+        <select class="ui fluid search dropdown" name="sexo">
+          <option value="">Sexo</option>
+          <option value="feminino">Feminino</option>
+          <option value="masculino">Masculino</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <input type="password" name="senha" placeholder="Senha">
+          </div>
+          <div class="field">
+            <input type="password" name="confirmcaosenha" placeholder="Confirmação de senha">
+          </div>
+        </div>
+      </div>
+      <button class="ui fluid large blue submit button" >Cadastrar</button>
+    </form>
+
+    <div class="ui inverted message">
+      Já é cadastrado? <a href="login.php">Entrar</a>
     </div>
+  </div>
 </div>
 
 </body>
 </html>
+
+
+<!--<div class="ui inverted segment">
+      <div class="ui inverted secondary pointing menu">
+        <div class="ui circular image header">
+          <img src="logo.jpg">
+        </div>
+
+        <div class="right menu">
+          <a href="index.html" class="item">
+            Página Inicial
+          </a>
+          <a href="login.php" class="item">
+            Login
+          </a>
+          <a class="active item">
+            Cadastre-se
+          </a>
+          <a class="item">Animus</a>
+        </div>
+      </div>
+    </div>
+
+
+<div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="sexo" checked="checked">
+          <label>Feminino</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="sexo">
+          <label>Masculino</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="sexo">
+          <label>Outro</label>
+        </div>
+      </div>
+    </div>

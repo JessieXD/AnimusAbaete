@@ -12,12 +12,12 @@
 
     if ($_GET['acao'] == 'cadastrarVol'){
 
-        $usuario = new Voluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
+        /*$usuario = new Voluntario( $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['user'], $_POST['sexo'], $_POST['idade']);
         $crud    = new CrudVoluntario();
 
-        $crud->salvar($usuario);
+        $crud->salvar($usuario);*/
 
-        header('Location : ../view/perfil.php');
+        header('Location : ../view/login.php');
     }
 
     if ($_GET['acao'] == 'editar'){
