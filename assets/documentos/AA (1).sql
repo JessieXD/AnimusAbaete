@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 13/08/2018 às 13:40
--- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
+-- Generation Time: Aug 16, 2018 at 04:49 PM
+-- Server version: 5.7.21-0ubuntu0.16.04.1
+-- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,27 +17,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `AA`
+-- Database: `AA`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atendimento`
+-- Table structure for table `atendimento`
 --
 
 CREATE TABLE `atendimento` (
-  `cod_especialidade` smallint(6) DEFAULT NULL,
-  `cod_user` smallint(6) DEFAULT NULL,
+  `cod_especialidade` int(6) DEFAULT NULL,
+  `cod_user` int(6) DEFAULT NULL,
   `cnpj` int(11) DEFAULT NULL,
   `user` varchar(10) DEFAULT NULL,
-  `ESPECIALIDADE_cod_especialidade` smallint(6) NOT NULL
+  `ESPECIALIDADE_cod_especialidade` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividades`
+-- Table structure for table `atividades`
 --
 
 CREATE TABLE `atividades` (
@@ -46,12 +46,12 @@ CREATE TABLE `atividades` (
   `data` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
   `nro_vagas` int(11) DEFAULT NULL,
-  `cod_atividade` smallint(6) NOT NULL,
+  `cod_atividade` int(6) NOT NULL,
   `ong_idong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `atividades`
+-- Dumping data for table `atividades`
 --
 
 INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`) VALUES
@@ -62,42 +62,42 @@ INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
   `descricao` varchar(600) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL,
-  `cod_categoria` smallint(6) NOT NULL
+  `cod_categoria` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `especialidade`
+-- Table structure for table `especialidade`
 --
 
 CREATE TABLE `especialidade` (
   `nome` varchar(60) DEFAULT NULL,
-  `cod_especialidade` smallint(6) NOT NULL,
+  `cod_especialidade` int(6) NOT NULL,
   `descricao` varchar(600) DEFAULT NULL,
-  `cod_categoria` smallint(6) DEFAULT NULL
+  `cod_categoria` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `local`
+-- Table structure for table `local`
 --
 
 CREATE TABLE `local` (
-  `cod_local` smallint(6) NOT NULL,
+  `cod_local` int(6) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `endereco` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `local`
+-- Dumping data for table `local`
 --
 
 INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
@@ -108,16 +108,16 @@ INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `local_atividade`
+-- Table structure for table `local_atividade`
 --
 
 CREATE TABLE `local_atividade` (
-  `cod_local` smallint(6) NOT NULL,
-  `cod_atividade` smallint(6) NOT NULL
+  `cod_local` int(6) NOT NULL,
+  `cod_atividade` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `local_atividade`
+-- Dumping data for table `local_atividade`
 --
 
 INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
@@ -128,14 +128,14 @@ INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `ong`
+-- Table structure for table `ong`
 --
 
 CREATE TABLE `ong` (
   `idong` int(11) NOT NULL,
   `cnpj` varchar(45) DEFAULT NULL,
   `nome_responsavel` varchar(45) DEFAULT NULL,
-  `local_cod_local` smallint(6) NOT NULL,
+  `local_cod_local` int(6) NOT NULL,
   `causas_ong` varchar(300) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -143,18 +143,18 @@ CREATE TABLE `ong` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `participacao`
+-- Table structure for table `participacao`
 --
 
 CREATE TABLE `participacao` (
-  `cod_user` smallint(6) DEFAULT NULL,
-  `ATIVIDADES_cod_atividade` smallint(6) NOT NULL
+  `cod_user` int(6) DEFAULT NULL,
+  `ATIVIDADES_cod_atividade` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipo_usuario`
+-- Table structure for table `tipo_usuario`
 --
 
 CREATE TABLE `tipo_usuario` (
@@ -165,147 +165,115 @@ CREATE TABLE `tipo_usuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `cod_user` smallint(6) NOT NULL,
+  `cod_user` int(6) NOT NULL,
   `senha` int(11) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `nome` varchar(60) DEFAULT NULL,
   `user` varchar(10) DEFAULT NULL,
   `idade` date DEFAULT NULL,
-  `sexo` varchar(3) DEFAULT NULL,
+  `sexo` varchar(15) DEFAULT NULL,
   `bio` varchar(600) DEFAULT NULL,
-  `img` varchar(100) DEFAULT 'logo.jpg',
+  `imagem` varchar(100) DEFAULT 'icon.png',
   `site` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `usuario`
+-- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `img`, `site`) VALUES
-(2, 25, 'annalisa.wyatt@massa.com', 'Annalisa Wyatt', 'Anna', '1962-06-29', 'fem', 'Amo o verde', 'logo.jpg', NULL),
-(4, 25, 'veronika_houghton@magna.com', 'Veronika Houghton', 'Vee', '1976-12-14', 'fem', 'sindicalista', 'logo.jpg', NULL),
-(8, 25, 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'logo.jpg', NULL),
-(10, 26, 'fzc@nibh.com', 'Fundação ZOO Catarinense', '', NULL, NULL, NULL, 'logo.jpg', NULL),
-(12, 26, 'ihcs@massa.com', 'IHCS', NULL, NULL, NULL, NULL, 'logo.jpg', NULL),
-(14, 26, 'saude_mulher@odio.com', 'Mulheres pela Saúde', NULL, NULL, NULL, NULL, 'logo.jpg', NULL);
+INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `imagem`, `site`) VALUES
+(2, 25, 'annalisa.wyatt@massa.com', 'Annalisa Wyatt', 'Anna', '1962-06-29', 'fem', 'Amo o verde', 'icon.png', 'https://www.buzzfeed.com/'),
+(4, 25, 'veronika_houghton@magna.com', 'Veronika Houghton', 'Vee', '1976-12-14', 'fem', 'sindicalista', 'icon.png', NULL),
+(8, 25, 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'icon.png', NULL),
+(10, 26, 'fzc@nibh.com', 'Fundação ZOO Catarinense', '', NULL, NULL, NULL, 'icon.png', NULL),
+(12, 26, 'ihcs@massa.com', 'IHCS', NULL, NULL, NULL, NULL, 'icon.png', NULL),
+(14, 26, 'saude_mulher@odio.com', 'Mulheres pela Saúde', NULL, NULL, NULL, NULL, 'icon.png', NULL),
+(16, 1234, 'lucas@gmail.com', 'lucas', 'lusca', '1999-11-10', 'mas', 'lala', 'icon.png', 'www.google.com'),
+(18, 123, 'souomandela@gmail.com', 'Mandela', 'mandelinha', '2018-12-18', 'masculino', NULL, 'icon.png', NULL);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `atendimento`
+-- Indexes for table `atendimento`
 --
 ALTER TABLE `atendimento`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_ATENDIMENTO_ESPECIALIDADE1_idx` (`ESPECIALIDADE_cod_especialidade`);
 
 --
--- Índices de tabela `atividades`
+-- Indexes for table `atividades`
 --
 ALTER TABLE `atividades`
   ADD PRIMARY KEY (`cod_atividade`),
   ADD KEY `fk_atividades_ong1_idx` (`ong_idong`);
 
 --
--- Índices de tabela `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`cod_categoria`);
 
 --
--- Índices de tabela `especialidade`
+-- Indexes for table `especialidade`
 --
 ALTER TABLE `especialidade`
   ADD PRIMARY KEY (`cod_especialidade`),
   ADD KEY `especialidade_ibfk_2_idx` (`cod_categoria`);
 
 --
--- Índices de tabela `local`
+-- Indexes for table `local`
 --
 ALTER TABLE `local`
   ADD PRIMARY KEY (`cod_local`);
 
 --
--- Índices de tabela `local_atividade`
+-- Indexes for table `local_atividade`
 --
 ALTER TABLE `local_atividade`
   ADD KEY `fk_LOCAL_ATIVIDADE_ATIVIDADES1_idx` (`cod_atividade`),
   ADD KEY `fk_LOCAL_ATIVIDADE_LOCAL1_idx` (`cod_local`);
 
 --
--- Índices de tabela `ong`
+-- Indexes for table `ong`
 --
 ALTER TABLE `ong`
   ADD PRIMARY KEY (`idong`),
   ADD KEY `fk_ong_local1_idx` (`local_cod_local`);
 
 --
--- Índices de tabela `participacao`
+-- Indexes for table `participacao`
 --
 ALTER TABLE `participacao`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_participacao_ATIVIDADES1_idx` (`ATIVIDADES_cod_atividade`);
 
 --
--- Índices de tabela `tipo_usuario`
+-- Indexes for table `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   ADD PRIMARY KEY (`idtipo_usuario`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_user`);
 
 --
--- Restrições para dumps de tabelas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Restrições para tabelas `atendimento`
+-- AUTO_INCREMENT for table `usuario`
 --
-ALTER TABLE `atendimento`
-  ADD CONSTRAINT `atendimento_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`),
-  ADD CONSTRAINT `fk_ATENDIMENTO_ESPECIALIDADE1` FOREIGN KEY (`ESPECIALIDADE_cod_especialidade`) REFERENCES `especialidade` (`cod_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `atividades`
---
-ALTER TABLE `atividades`
-  ADD CONSTRAINT `fk_atividades_ong1` FOREIGN KEY (`ong_idong`) REFERENCES `ong` (`idong`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `especialidade`
---
-ALTER TABLE `especialidade`
-  ADD CONSTRAINT `especialidade_ibfk_2` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `local_atividade`
---
-ALTER TABLE `local_atividade`
-  ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_ATIVIDADES1` FOREIGN KEY (`cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_LOCAL_ATIVIDADE_LOCAL1` FOREIGN KEY (`cod_local`) REFERENCES `local` (`cod_local`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `ong`
---
-ALTER TABLE `ong`
-  ADD CONSTRAINT `fk_ong_local1` FOREIGN KEY (`local_cod_local`) REFERENCES `local` (`cod_local`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `participacao`
---
-ALTER TABLE `participacao`
-  ADD CONSTRAINT `fk_participacao_ATIVIDADES1` FOREIGN KEY (`ATIVIDADES_cod_atividade`) REFERENCES `atividades` (`cod_atividade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`cod_user`) REFERENCES `usuario` (`cod_user`);
-
+ALTER TABLE `usuario`
+  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
