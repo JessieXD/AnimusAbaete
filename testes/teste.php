@@ -6,12 +6,12 @@
  * Time: 13:17
  */
 
-require_once '../app/model/CrudUsuarioVoluntario.php';
-require_once '../app/model/UsuarioVoluntario.php';
+require_once '../app/model/CrudVoluntario.php';
+require_once '../app/model/Voluntario.php';
 
-$user = new UsuarioVoluntario('','SUL', '1234', 'lucas@gmail.com', 'lucas', 'lalala', 'lucas', 'masc', '10/11/1999','lala');
-$crud = new CrudUsuarioVoluntario();
-$crud->getUsuarioVoluntario(2);
+$user = new Voluntario(null , '1234', 'lucas@gmail.com', 'lucas', 'lalala',  'masc', '1990/11/11',null,null, null);
+$crud = new CrudVoluntario();
+$crud->salvar($user);
 
 
 
