@@ -47,8 +47,8 @@ $_GET['item'] = 4;
       <a class="ui blue ribbon label"><i class="info icon"></i>Info</a>
       <p></p>
       <p><i class="linkify icon"></i><a href="<?=$usuario->site?>"><?=$usuario->site?></a></p>
-      <p><i class="birthday cake icon"></i></p>
-      <p><i class="map pin icon"></i></p>
+      <p><i class="birthday cake icon"></i><?=$usuario->idade?></p>
+      <p><i class="map pin icon"></i>Joinville</p>
       <p></p>
     </div>
   </div>

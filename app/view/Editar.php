@@ -17,7 +17,7 @@ require_once "cabecalho.php";
         <h2 class="ui small circular image">
             <a href="../controllers/controlador.php?acao=editar"><img src="../../imagens/logo.jpg" class="image"></a>
         </h2>
-        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarVol">
+        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=editarVol">
             <div class="field">
                 <input type="text" name="nome" placeholder="Nome" value="<?= $usuario->nome ?>"  placeholder="<?= $usuario->nome ?>">
             </div>
@@ -34,6 +34,10 @@ require_once "cabecalho.php";
                 <input type="text" name="biografia" placeholder="Biografia" value="<?= $usuario->bio ?>" placeholder="<?= $usuario->bio?>">
             </div>
             <button class="ui fluid large blue submit button" >Alterar</button>
+            <br>
+        </form>
+        <form class="ui large form" method="post" action="procura.php">
+            <button class="ui fluid large red submit button" >Excluir Conta</button>
             <br>
     </div>
     </div>
