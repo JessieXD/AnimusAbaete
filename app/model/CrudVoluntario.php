@@ -10,8 +10,8 @@ require_once "Conexao.php";
 require_once "Voluntario.php";
 
 class CrudVoluntario{
-    private $conexao;
-    private $usuario;
+    public $conexao;
+    public $usuario;
 
     public function __construct(){
 
@@ -19,7 +19,7 @@ class CrudVoluntario{
     }
 
     public function salvar(Voluntario $user){
-        $sql = "INSERT INTO usuario (senha, email, nome, user, sexo, idade , bio, imagem, site) VALUES (`$user->senha`, `$user->email`, `$user->nome`, `$user->user`, `$user->sexo`,`$user->idade`, `$user->bio`, `$user->imagem`, `$user->site)";
+        $sql = "INSERT INTO usuario (senha, email, nome, user, sexo, idade) VALUES ('$user->senha', '$user->email', '$user->nome', '$user->user', '$user->sexo', '$user->idade');)";
 
         $this->conexao->exec($sql);
     }
