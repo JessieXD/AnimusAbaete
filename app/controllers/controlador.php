@@ -17,7 +17,7 @@
 
         $crud->salvar($usuario);
 
-        print_r($usuario);
+        header('Location: ../view/login.php');
     }
 
     if ($_GET['acao'] == 'editar'){
