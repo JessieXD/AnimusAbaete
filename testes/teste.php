@@ -11,7 +11,8 @@ require_once '../app/model/Voluntario.php';
 
 $user = new Voluntario(null , '1234', 'lucas@gmail.com', 'lucas', 'lalala',  'masc', '1990/11/11',null,null, null);
 $crud = new CrudVoluntario();
-$crud->salvar($user);
+$crud->excluirVol(27);
+
 
 
 
