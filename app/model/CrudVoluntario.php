@@ -25,8 +25,7 @@ class CrudVoluntario{
     }
 
     public function editar(Voluntario $user){
-
-        $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', user = '$user->user', sexo = '$user->sexo', idade = '$user->idade', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site', WHERE cod_user = $user->cod_user ");
+        $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site' WHERE cod_user = $user->cod_user ");
     }
 
     public function getVoluntario( $cod_user){
@@ -48,6 +47,11 @@ class CrudVoluntario{
         }
 
         return $listaUsuarios;
+    }
+    public function excluirVol(int $codigo)
+    {
+        //DELETE FROM table_name WHERE condition;
+        $this->conexao->query("DELETE FROM usuario WHERE cod_user = $codigo");
     }
 
 }

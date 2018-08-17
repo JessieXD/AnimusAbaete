@@ -1,5 +1,6 @@
 <p></p>
-
+</body>
+<footer>
 <div class="ui black inverted vertical footer segment">
     <div class="ui center aligned container">
         <div class="ui stackable inverted grid">
@@ -45,6 +46,5 @@
         </div>
     </div>
 </div>
-
-</body>
+</footer>
 </html>

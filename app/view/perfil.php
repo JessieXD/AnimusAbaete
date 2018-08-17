@@ -1,6 +1,6 @@
 <?php
 
-$_GET['item'] = 4;
+$_GET['item'] = 3;
 
     require_once "cabecalho.php";
     require_once "../model/CrudVoluntario.php";
@@ -15,10 +15,10 @@ $_GET['item'] = 4;
         header("location: login.php");
     }
 
-    $cod     = $_GET['codigo'];
+    $cod     = $_GET['user'];
     $usuario = $crud->getVoluntario($cod);
 
-//    print_r($produto);
+//    print_r();
 //    exit();
 ?>
 
@@ -31,7 +31,7 @@ $_GET['item'] = 4;
 		<h2 class="ui center aligned icon header"><?=$usuario->nome?></h2>
     </div>
 	<div class="column">
-        <a href="Editar.php?user=2">
+        <a href="Editar.php?user=<?=$usuario->cod_user?>">
             <button class="ui blue button right floated"><i class="edit icon"></i>Editar</button>
         </a>
     </div>
@@ -48,7 +48,7 @@ $_GET['item'] = 4;
       <p></p>
       <p><i class="linkify icon"></i><a href="<?=$usuario->site?>"><?=$usuario->site?></a></p>
       <p><i class="birthday cake icon"></i><?=$usuario->idade?></p>
-      <p><i class="map pin icon"></i>Joinville</p>
+      <p><i class="map pin icon"></i>África do Sul</p>
       <p></p>
     </div>
   </div>

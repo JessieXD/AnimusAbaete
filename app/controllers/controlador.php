@@ -22,12 +22,34 @@
 
     if ($_GET['acao'] == 'editar'){
 
-        $usuario = new Voluntario($_POST['cod_user'] = null, $_POST['regiao'] = null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['perfil'] = null, $_POST['user'], $_POST['sexo'], $_POST['idade'] = null, $_POST['bio'] = null);
+        if (isset($_POST['imagem'])){
+        $usuario = new Voluntario($_GET['user'],  $_POST['senha'], $_POST['email'], $_POST['nome'], null, null, null, $_POST['bio'], $_POST['imagem'], $_POST['site']);
         $crud    = new CrudVoluntario();
 
         $crud->editar($usuario);
+        $cod    = $_GET['user'];
 
-        header('Location: ../view/perfil.php');
+        header('Location: ../view/perfil.php?user='.$cod);
+            }else{
+
+            $imagem  = "icon.png";
+            $usuario = new Voluntario($_GET['user'],  $_POST['senha'], $_POST['email'], $_POST['nome'], null, null, null, $_POST['bio'], $imagem, $_POST['site']);
+            $crud    = new CrudVoluntario();
+
+            $crud->editar($usuario);
+            $cod    = $_GET['user'];
+
+            header('Location: ../view/perfil.php?user='.$cod);
+        }
+    }
+
+    if ($_GET['acao'] == 'excluir'){
+
+        $crud   = new CrudVoluntario();
+        $crud->excluirVol($_GET['user']);
+
+
+        header('Location: verificaUser.php?acao=sair');
     }
 
 

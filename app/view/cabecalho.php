@@ -6,6 +6,7 @@ $existe = isset($_SESSION['esta_logado']);
 if ($existe == false){
     header("location: login.php");
 }*/
+
 ?>
 
 <!DOCTYPE html>
@@ -41,13 +42,6 @@ if ($existe == false){
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
                 case 3:
-                    echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
-                          <a href="procura.php" class="item">Procurar</a>
-			              <a href="cad_ong.html" class="item">Cadastre sua ONG</a>
-			              <a href="perfil.php" class="active item">Perfil</a>
-	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
-                    break;
-                case 4:
                     echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
                           <a href="procura.php" class="item">Procurar</a>
 			              <a href="cad_ong.html" class="item">Cadastre sua ONG</a>

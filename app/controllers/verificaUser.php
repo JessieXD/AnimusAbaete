@@ -33,7 +33,7 @@ foreach ($usuarios as $usuario){
 
         //print_r($_POST);
         //redirecionar
-        header('Location: ../view/perfil.php?codigo='.$codigo);
+        header('Location: ../view/perfil.php?user='.$codigo);
 
     }
 }
