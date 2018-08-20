@@ -6,7 +6,7 @@
  * Time: 15:27
  */
 
-    require_once '../model/UsuarioOng.php';
+    require_once '../model/Ong.php';
     require_once '../model/Voluntario.php';
     require_once '../model/CrudVoluntario.php';
 

@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: 17-Ago-2018 às 14:58
--- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.22-0ubuntu0.16.04.1
+-- Host: 127.0.0.1
+-- Generation Time: 20-Ago-2018 às 19:24
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `AA`
+-- Database: `aa`
 --
 
 -- --------------------------------------------------------
@@ -134,11 +136,20 @@ INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
 CREATE TABLE `ong` (
   `idong` int(11) NOT NULL,
   `cnpj` varchar(45) DEFAULT NULL,
+  `nome_ong` varchar(50) NOT NULL,
   `nome_responsavel` varchar(45) DEFAULT NULL,
-  `local_cod_local` int(6) NOT NULL,
+  `local_cod_local` int(6) DEFAULT NULL,
   `causas_ong` varchar(300) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL
+  `email` varchar(50) DEFAULT NULL,
+  `imagem` varchar(100) DEFAULT 'ong.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `ong`
+--
+
+INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `local_cod_local`, `causas_ong`, `email`, `imagem`) VALUES
+(1, '218263676.01', 'ONG DO BALACOBACO', 'JUNINHO', 0, 'A GENTE AJUDA UMA GALERA AÍ', 'annalisa.wyatt@massa.com', 'ong.png');
 
 -- --------------------------------------------------------
 
@@ -186,7 +197,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `imagem`, `site`) VALUES
-(2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', 'Amo o verde', 'icon.png', 'https://www.buzzfeed.com/'),
+(2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', '', '18.jpg', 'https://www.buzzfeed.com/'),
 (8, '25', 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'icon.png', NULL),
 (16, '123', 'lucas@gmail.com', 'Lucas', 'lusca', '1999-11-10', 'mas', 'Lalalala', 'icon.png', 'www.google.com'),
 (18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela'),
@@ -267,10 +278,18 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT for table `ong`
+--
+ALTER TABLE `ong`
+  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
