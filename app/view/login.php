@@ -9,8 +9,13 @@
 </head>
 <style type="text/css">
   body{
-    background-color: #1B1C1D;
+    background-color: #96c8da;
   }
+  #msg{
+      background-color: #96c8da;
+      border-color: #96c8da;
+  }
+
 </style>
 <body>
 <br>
@@ -19,12 +24,12 @@
 <div class="ui middle aligned center aligned grid">
   <div class="four wide column">
     <h2 class="ui teal small circular image">
-      <a href="../../index.html"><img src="../../imagens/logo.jpg" class="image"></a>
+      <a href="../../index.html"><img src="../../imagens/logo.png" class="image"></a>
     </h2>
     <div>
     </div>
     <form class="ui large form" action="../controllers/verificaUser.php?acao=login" method="post">
-      <div class="ui inverted stacked segment">
+      <div>
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
@@ -38,11 +43,12 @@
           </div>
         </div>
       </div>
-        <button class="ui fluid large blue submit button" >Login</button>
+        <p></p>
+        <button class="ui fluid large teal submit button" >Login</button>
     </form>
 
       <!--<div class="ui error message"></div>-->
-    <div class="ui inverted message">
+    <div class="ui message" id="msg">
       Novo aqui? <a href="cadastro.html">Cadastre-se</a>
     </div>
   </div>

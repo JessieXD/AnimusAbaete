@@ -8,16 +8,20 @@ class Ong{
     public $local;
     public $causas;
     public $email;
+    public $imagem;
+    public $telefone;
 
-    public function __construct($cod_user = null, $cnpj, $nome_ong, $nome_resp, $local, $causas, $email){
+    public function __construct($cod_user = null, $cnpj, $nome_ong, $nome_resp, $local, $causas, $email, $imagem, $telefone){
 
-        $this->cod_user     = $cod_user;
-        $this->regiao       = $cnpj;
-        $this->senha        = $nome_ong;
-        $this->email        = $nome_resp;
-        $this->nome         = $local;
-        $this->perfil       = $causas;
-        $this->fin_espe_ong = $email;
+        $this->cod_user  = $cod_user;
+        $this->cnpj      = $cnpj;
+        $this->nome_ong  = $nome_ong;
+        $this->nome_resp = $nome_resp;
+        $this->local     = $local;
+        $this->causas    = $causas;
+        $this->email     = $email;
+        $this->imagem    = $imagem;
+        $this->telefone  = $telefone;
 
     }
 }

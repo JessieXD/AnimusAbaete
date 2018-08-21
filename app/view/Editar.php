@@ -26,7 +26,7 @@ $_GET['item'] = 3;
     <div class="four wide column">
         <br>
         <h2 class="ui small circular image">
-            <a href="pag_inicial_logado.php"><img src="../../imagens/logo.png" class="image"></a>
+            <a href="pag_inicial_logado.php"><img src="../../imagens/<?= $usuario->imagem?>" class="image"></a>
         </h2>
         <form class="ui large form" method="post" action="../controllers/controlador.php?acao=editar&&user=<?= $usuario->cod_user?>">
             <div class="field">

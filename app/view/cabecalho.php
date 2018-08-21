@@ -15,10 +15,15 @@ if ($existe == false){
 	<meta charset="UTF-8">
 	<link rel="stylesheet"  href="../../semantic/semantic.css">
 	<!--<link href="carrossel/jquery.bxslider.css" rel="stylesheet" />-->
+    <style>
+        /* #ta{
+            background-color: #71ABBF;
+        }*/
+    </style>
 	<title>Animus Abaetê</title>
 </head>
 <body>
-	<div class="ui inverted segment">
+	<div class="ui inverted segment" id="ta">
 	  <div class="ui inverted secondary pointing menu">
     	<div class="ui mini image">
     		<img src="../../imagens/logo_2.png">

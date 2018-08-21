@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 20-Ago-2018 às 19:24
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: localhost
+-- Tempo de geração: 21/08/2018 às 16:06
+-- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aa`
+-- Banco de dados: `AA`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `atendimento`
+-- Estrutura para tabela `atendimento`
 --
 
 CREATE TABLE `atendimento` (
@@ -39,7 +37,7 @@ CREATE TABLE `atendimento` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `atividades`
+-- Estrutura para tabela `atividades`
 --
 
 CREATE TABLE `atividades` (
@@ -53,7 +51,7 @@ CREATE TABLE `atividades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `atividades`
+-- Fazendo dump de dados para tabela `atividades`
 --
 
 INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`) VALUES
@@ -64,7 +62,7 @@ INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Estrutura para tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -76,7 +74,7 @@ CREATE TABLE `categoria` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `especialidade`
+-- Estrutura para tabela `especialidade`
 --
 
 CREATE TABLE `especialidade` (
@@ -89,7 +87,7 @@ CREATE TABLE `especialidade` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `local`
+-- Estrutura para tabela `local`
 --
 
 CREATE TABLE `local` (
@@ -99,7 +97,7 @@ CREATE TABLE `local` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `local`
+-- Fazendo dump de dados para tabela `local`
 --
 
 INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
@@ -110,7 +108,7 @@ INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `local_atividade`
+-- Estrutura para tabela `local_atividade`
 --
 
 CREATE TABLE `local_atividade` (
@@ -119,7 +117,7 @@ CREATE TABLE `local_atividade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `local_atividade`
+-- Fazendo dump de dados para tabela `local_atividade`
 --
 
 INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
@@ -130,31 +128,34 @@ INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ong`
+-- Estrutura para tabela `ong`
 --
 
 CREATE TABLE `ong` (
   `idong` int(11) NOT NULL,
   `cnpj` varchar(45) DEFAULT NULL,
-  `nome_ong` varchar(50) NOT NULL,
+  `nome_ong` varchar(50) DEFAULT NULL,
   `nome_responsavel` varchar(45) DEFAULT NULL,
   `local_cod_local` int(6) DEFAULT NULL,
   `causas_ong` varchar(300) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `imagem` varchar(100) DEFAULT 'ong.png'
+  `imagem` varchar(100) DEFAULT 'ong.png',
+  `telefone` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `ong`
+-- Fazendo dump de dados para tabela `ong`
 --
 
-INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `local_cod_local`, `causas_ong`, `email`, `imagem`) VALUES
-(1, '218263676.01', 'ONG DO BALACOBACO', 'JUNINHO', 0, 'A GENTE AJUDA UMA GALERA AÍ', 'annalisa.wyatt@massa.com', 'ong.png');
+INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `local_cod_local`, `causas_ong`, `email`, `imagem`, `telefone`) VALUES
+(1, '218263676.01', 'ONG DO BALACOBACO', 'JUNINHO', 0, 'A GENTE AJUDA UMA GALERA AÍ', 'annalisa.wyatt@massa.com', 'ong.png', ''),
+(2, '12341234', 'planta', 'juty', NULL, '', 'plantar@floreces.com', 'ong.png', NULL),
+(3, '12341234', 'planta', 'juty', NULL, 'plantinhas', 'plantar@floreces.com', 'ong.png', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `participacao`
+-- Estrutura para tabela `participacao`
 --
 
 CREATE TABLE `participacao` (
@@ -165,7 +166,7 @@ CREATE TABLE `participacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_usuario`
+-- Estrutura para tabela `tipo_usuario`
 --
 
 CREATE TABLE `tipo_usuario` (
@@ -176,7 +177,7 @@ CREATE TABLE `tipo_usuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -193,7 +194,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Fazendo dump de dados para tabela `usuario`
 --
 
 INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `imagem`, `site`) VALUES
@@ -204,92 +205,89 @@ INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `s
 (30, 'qrovazar', 'Crizu@live.com', 'Eduardo Maia', 'Crizu', '2001-07-22', 'masculino', 'Gosto de ir embora do if, geralmente 2:30, grato', '16.jpg', '');
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `atendimento`
+-- Índices de tabela `atendimento`
 --
 ALTER TABLE `atendimento`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_ATENDIMENTO_ESPECIALIDADE1_idx` (`ESPECIALIDADE_cod_especialidade`);
 
 --
--- Indexes for table `atividades`
+-- Índices de tabela `atividades`
 --
 ALTER TABLE `atividades`
   ADD PRIMARY KEY (`cod_atividade`),
   ADD KEY `fk_atividades_ong1_idx` (`ong_idong`);
 
 --
--- Indexes for table `categoria`
+-- Índices de tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`cod_categoria`);
 
 --
--- Indexes for table `especialidade`
+-- Índices de tabela `especialidade`
 --
 ALTER TABLE `especialidade`
   ADD PRIMARY KEY (`cod_especialidade`),
   ADD KEY `especialidade_ibfk_2_idx` (`cod_categoria`);
 
 --
--- Indexes for table `local`
+-- Índices de tabela `local`
 --
 ALTER TABLE `local`
   ADD PRIMARY KEY (`cod_local`);
 
 --
--- Indexes for table `local_atividade`
+-- Índices de tabela `local_atividade`
 --
 ALTER TABLE `local_atividade`
   ADD KEY `fk_LOCAL_ATIVIDADE_ATIVIDADES1_idx` (`cod_atividade`),
   ADD KEY `fk_LOCAL_ATIVIDADE_LOCAL1_idx` (`cod_local`);
 
 --
--- Indexes for table `ong`
+-- Índices de tabela `ong`
 --
 ALTER TABLE `ong`
   ADD PRIMARY KEY (`idong`),
   ADD KEY `fk_ong_local1_idx` (`local_cod_local`);
 
 --
--- Indexes for table `participacao`
+-- Índices de tabela `participacao`
 --
 ALTER TABLE `participacao`
   ADD KEY `cod_user` (`cod_user`),
   ADD KEY `fk_participacao_ATIVIDADES1_idx` (`ATIVIDADES_cod_atividade`);
 
 --
--- Indexes for table `tipo_usuario`
+-- Índices de tabela `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   ADD PRIMARY KEY (`idtipo_usuario`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `ong`
+-- AUTO_INCREMENT de tabela `ong`
 --
 ALTER TABLE `ong`
-  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
