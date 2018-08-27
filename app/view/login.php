@@ -9,12 +9,9 @@
 </head>
 <style type="text/css">
   body{
-    background-color: #96c8da;
+    background-color: white;
   }
-  #msg{
-      background-color: #96c8da;
-      border-color: #96c8da;
-  }
+
 
 </style>
 <body>
