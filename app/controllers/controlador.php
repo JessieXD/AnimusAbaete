@@ -55,10 +55,11 @@
         case 'cadastrarOng':
             $ong    = new Ong(null, $_POST['cnpj'],$_POST['nome_ong'],$_POST['nome_resp'],null,$_POST['causas'],$_POST['email'],null,$_POST['telefone']);
             $crud   = new CrudOng();
+            $cod    = $_POST['user'];
 
             $crud->salvar($ong);
 
-            print_r($ong);
+            header('Location: ../view/perfil.php?user='.$cod);
             break;
 
         default:
