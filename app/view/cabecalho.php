@@ -54,6 +54,13 @@ if ($existe == false){
 			              <a href="perfil.php" class="active item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
+                case 4:
+                    echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
+                          <a href="procura.php" class="item">Procurar</a>
+			              <a href="cad_ong.php?user='.$cod.'" class="active item">Sua ONG</a>
+			              <a href="perfil.php" class="item">Perfil</a>
+	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
+                    break;
             }
             ?>
 	    	<!--<a href="pag_inicial_logado.php" class="item">Página Inicial</a>

@@ -1,7 +1,26 @@
 <?php
 
-$_GET['item'] = 2;
-require_once 'cabecalho.php';?>
+$_GET['item'] = 4;
+require_once 'cabecalho.php';
+/*require_once "../model/CrudOng.php";
+
+$usuario = $_GET['user'];
+$crud    = new CrudOng();
+
+session_start();
+
+$existe = isset($_SESSION['usuario_online']);
+
+if ($existe == false){
+    header("location: perfil.php?user=".$usuario);
+}
+
+$cod     = $_GET['user'];
+$usuario = $crud->getOng($cod);*/
+
+//    print_r();
+//    exit();
+?>
 
 	<div class="ui three column grid">
 		<div class="column">
@@ -12,8 +31,12 @@ require_once 'cabecalho.php';?>
 		<h2 class="ui center aligned icon header"> ONG Florescer</h2>
 		</div>
 		<div class="column">
-		<button class="ui teal button right floated"><i class="edit icon"></i>Editar</button>
-		</div>
+		<!--<button class="ui teal button right floated"><i class="edit icon"></i>Editar</button>-->
+        <a href="../controllers/controlador.php?acao=excluirOng&&user=<?= $ong->cod_user?>">
+            <button class="ui red button right floated"><i class="window close outline icon"></i>Excluir</button>
+        </a>
+        </div>
+
 	</div>
 
 <div class="ui grid">
