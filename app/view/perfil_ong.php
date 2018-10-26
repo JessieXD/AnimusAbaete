@@ -33,7 +33,7 @@ $usuario = $crud->getOng($cod);*/
 		<div class="column">
 		<!--<button class="ui teal button right floated"><i class="edit icon"></i>Editar</button>-->
         <a href="../controllers/controlador.php?acao=excluirOng&&user=<?= $ong->cod_user?>">
-            <button class="ui red button right floated"><i class="window close outline icon"></i>Excluir</button>
+            <button class="ui red button right floated"><i class="x icon"></i>Excluir</button>
         </a>
         </div>
 
