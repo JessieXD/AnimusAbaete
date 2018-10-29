@@ -7,8 +7,9 @@
 </head>
 <style type="text/css">
     body{
-        background-color: #96c8da;
+        background-color: white;
     }
+
 </style>
 <body>
 <div class="ui middle aligned center aligned grid">
