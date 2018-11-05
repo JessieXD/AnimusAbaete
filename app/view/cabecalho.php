@@ -31,34 +31,35 @@ if ($existe == false){
 
 	    <div class="right menu">
             <?php
-            $cod = 5;
+            $user = $_GET['user'];
+
             switch ($_GET['item']){
                 case 1:
-                    echo '<a href="pag_inicial_logado.php" class="active item">Página Inicial</a>
-                          <a href="procura.php" class="item">Procurar</a>
-			              <a href="cad_ong.php?user='.$cod.'"class="item">Sua ONG</a>
-			              <a href="perfil.php" class="item">Perfil</a>
+                    echo '<a href="pag_inicial_logado.php?user="'.$user.' class="active item">Página Inicial</a>
+                          <a href="procura.php?user="'.$user.' class="item">Procurar</a>
+			              <a href="cad_ong.php?user='.$user.'"class="item">Sua ONG</a>
+			              <a href="perfil.php?user="'.$user.' class="item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
                 case 2:
-                    echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
-                          <a href="procura.php" class="active item">Procurar</a>
-			              <a href="cad_ong.php?user='.$cod.'" class="item">Sua ONG</a>
-			              <a href="perfil.php" class="item">Perfil</a>
+                    echo '<a href="pag_inicial_logado.php?user="'.$user.' class="item">Página Inicial</a>
+                          <a href="procura.php?user="'.$user.' class="active item">Procurar</a>
+			              <a href="cad_ong.php?user='.$user.'" class="item">Sua ONG</a>
+			              <a href="perfil.php?user="'.$user.' class="item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
                 case 3:
-                    echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
-                          <a href="procura.php" class="item">Procurar</a>
-			              <a href="cad_ong.php?user='.$cod.'" class="item">Sua ONG</a>
-			              <a href="perfil.php" class="active item">Perfil</a>
+                    echo '<a href="pag_inicial_logado.php?user="'.$user.' class="item">Página Inicial</a>
+                          <a href="procura.php?user="'.$user.' class="item">Procurar</a>
+			              <a href="cad_ong.php?user='.$user.'" class="item">Sua ONG</a>
+			              <a href="perfil.php?user="'.$user.' class="active item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
                 case 4:
-                    echo '<a href="pag_inicial_logado.php" class="item">Página Inicial</a>
-                          <a href="procura.php" class="item">Procurar</a>
-			              <a href="cad_ong.php?user='.$cod.'" class="active item">Sua ONG</a>
-			              <a href="perfil.php" class="item">Perfil</a>
+                    echo '<a href="pag_inicial_logado.php?user="'.$user.' class="item">Página Inicial</a>
+                          <a href="procura.php?user="'.$user.' class="item">Procurar</a>
+			              <a href="cad_ong.php?user='.$user.'" class="active item">Sua ONG</a>
+			              <a href="perfil.php?user="'.$user.' class="item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;
             }

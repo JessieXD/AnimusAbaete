@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 26-Out-2018 às 14:43
+-- Tempo de geração: 05/11/2018 às 10:45
 -- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.22-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `AA`
+-- Banco de dados: `AA`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `atividades`
+-- Estrutura para tabela `atividades`
 --
 
 CREATE TABLE `atividades` (
@@ -37,7 +37,7 @@ CREATE TABLE `atividades` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `atividades`
+-- Fazendo dump de dados para tabela `atividades`
 --
 
 INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Estrutura para tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -57,10 +57,26 @@ CREATE TABLE `categoria` (
   `cod_categoria` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Fazendo dump de dados para tabela `categoria`
+--
+
+INSERT INTO `categoria` (`descricao`, `nome`, `cod_categoria`) VALUES
+(NULL, 'Ambiental', 1),
+(NULL, 'Animal', 2),
+(NULL, 'Educação', 3),
+(NULL, 'Esporte', 4),
+(NULL, 'Cultural', 5),
+(NULL, 'Saúde', 6),
+(NULL, 'Assistência Social', 7),
+(NULL, 'Crianças e Adolescentes', 8),
+(NULL, 'Atendimento á mulher', 9),
+(NULL, 'Comunidade LGBT', 10);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `local`
+-- Estrutura para tabela `local`
 --
 
 CREATE TABLE `local` (
@@ -70,7 +86,7 @@ CREATE TABLE `local` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `local`
+-- Fazendo dump de dados para tabela `local`
 --
 
 INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
@@ -81,7 +97,7 @@ INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `local_atividade`
+-- Estrutura para tabela `local_atividade`
 --
 
 CREATE TABLE `local_atividade` (
@@ -90,7 +106,7 @@ CREATE TABLE `local_atividade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `local_atividade`
+-- Fazendo dump de dados para tabela `local_atividade`
 --
 
 INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
@@ -101,7 +117,7 @@ INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ong`
+-- Estrutura para tabela `ong`
 --
 
 CREATE TABLE `ong` (
@@ -117,19 +133,20 @@ CREATE TABLE `ong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `ong`
+-- Fazendo dump de dados para tabela `ong`
 --
 
 INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `local_cod_local`, `causas_ong`, `email`, `imagem`, `telefone`) VALUES
 (1, '218263676.01', 'ONG DO BALACOBACO', 'JUNINHO', 0, 'A GENTE AJUDA UMA GALERA AÍ', 'annalisa.wyatt@massa.com', 'ong.png', ''),
 (2, '12341234', 'planta', 'juty', NULL, '', 'plantar@floreces.com', 'ong.png', NULL),
 (3, '12341234', 'planta', 'juty', NULL, 'plantinhas', 'plantar@floreces.com', 'ong.png', NULL),
-(4, '12341242', 'Do Vini', 'Vini', NULL, 'Esportes', '', 'ong.png', NULL);
+(4, '12341242', 'Do Vini', 'Vini', NULL, 'Esportes', '', 'ong.png', NULL),
+(8, '12356521125', 'Plantenhas', 'Anna', NULL, 'plantas', 'plantenhas@hotmail.com', 'ong.png', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `participacao`
+-- Estrutura para tabela `participacao`
 --
 
 CREATE TABLE `participacao` (
@@ -140,7 +157,7 @@ CREATE TABLE `participacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_usuario`
+-- Estrutura para tabela `tipo_usuario`
 --
 
 CREATE TABLE `tipo_usuario` (
@@ -151,7 +168,7 @@ CREATE TABLE `tipo_usuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -168,11 +185,11 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Fazendo dump de dados para tabela `usuario`
 --
 
 INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `imagem`, `site`) VALUES
-(2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', '', '18.jpg', 'https://www.buzzfeed.com/'),
+(2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', '', 'icon.png', 'https://www.buzzfeed.com/'),
 (8, '25', 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'icon.png', NULL),
 (16, '123', 'lucas@gmail.com', 'Lucas', 'lusca', '1999-11-10', 'mas', 'Lalalala', 'icon.png', 'www.google.com'),
 (18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela'),
@@ -181,65 +198,70 @@ INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `s
 (34, '123', 'pc@gmail.com', 'PC', 'pcanimus', '1960-02-14', 'masculino', '', '', '');
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `atividades`
+-- Índices de tabela `atividades`
 --
 ALTER TABLE `atividades`
   ADD PRIMARY KEY (`cod_atividade`),
   ADD KEY `fk_atividades_ong1_idx` (`ong_idong`);
 
 --
--- Indexes for table `categoria`
+-- Índices de tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`cod_categoria`);
 
 --
--- Indexes for table `local`
+-- Índices de tabela `local`
 --
 ALTER TABLE `local`
   ADD PRIMARY KEY (`cod_local`);
 
 --
--- Indexes for table `local_atividade`
+-- Índices de tabela `local_atividade`
 --
 ALTER TABLE `local_atividade`
   ADD KEY `fk_LOCAL_ATIVIDADE_ATIVIDADES1_idx` (`cod_atividade`),
   ADD KEY `fk_LOCAL_ATIVIDADE_LOCAL1_idx` (`cod_local`);
 
 --
--- Indexes for table `ong`
+-- Índices de tabela `ong`
 --
 ALTER TABLE `ong`
   ADD PRIMARY KEY (`idong`),
   ADD KEY `fk_ong_local1_idx` (`local_cod_local`);
 
 --
--- Indexes for table `tipo_usuario`
+-- Índices de tabela `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   ADD PRIMARY KEY (`idtipo_usuario`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `ong`
+-- AUTO_INCREMENT de tabela `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `cod_categoria` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de tabela `ong`
 --
 ALTER TABLE `ong`
-  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
