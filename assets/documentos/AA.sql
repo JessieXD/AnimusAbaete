@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 05/11/2018 às 10:45
--- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
--- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
+-- Host: 127.0.0.1
+-- Generation Time: 19-Nov-2018 às 16:39
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `AA`
+-- Database: `aa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividades`
+-- Estrutura da tabela `atividades`
 --
 
 CREATE TABLE `atividades` (
@@ -33,22 +35,23 @@ CREATE TABLE `atividades` (
   `hora` time DEFAULT NULL,
   `nro_vagas` int(11) DEFAULT NULL,
   `cod_atividade` int(6) NOT NULL,
-  `ong_idong` int(11) NOT NULL
+  `ong_idong` int(11) NOT NULL,
+  `categoria_cod_categoria` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `atividades`
+-- Extraindo dados da tabela `atividades`
 --
 
-INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`) VALUES
-('Vamos fazer um faxinão no ZOO.', '+ verde - lixo ', '2018-09-20', '15:30:00', 5, 1, 0),
-('Vamos juntos resgatar a história operária da cidade. ', 'Redescobrindo a História', '2018-06-14', '16:00:00', 15, 2, 0),
-('Multirão de exames preventivo (testes de glicemia)', 'Diabetes, tenho ou não?', '2018-04-30', '09:00:00', 20, 3, 0);
+INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`, `categoria_cod_categoria`) VALUES
+('Vamos fazer um faxinão no ZOO.', '+ verde - lixo ', '2018-09-20', '15:30:00', 5, 1, 0, 0),
+('Vamos juntos resgatar a história operária da cidade. ', 'Redescobrindo a História', '2018-06-14', '16:00:00', 15, 2, 0, 0),
+('Multirão de exames preventivo (testes de glicemia)', 'Diabetes, tenho ou não?', '2018-04-30', '09:00:00', 20, 3, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -58,7 +61,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`descricao`, `nome`, `cod_categoria`) VALUES
@@ -76,7 +79,7 @@ INSERT INTO `categoria` (`descricao`, `nome`, `cod_categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `local`
+-- Estrutura da tabela `local`
 --
 
 CREATE TABLE `local` (
@@ -86,7 +89,7 @@ CREATE TABLE `local` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `local`
+-- Extraindo dados da tabela `local`
 --
 
 INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
@@ -97,27 +100,7 @@ INSERT INTO `local` (`cod_local`, `nome`, `endereco`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `local_atividade`
---
-
-CREATE TABLE `local_atividade` (
-  `cod_local` int(6) NOT NULL,
-  `cod_atividade` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Fazendo dump de dados para tabela `local_atividade`
---
-
-INSERT INTO `local_atividade` (`cod_local`, `cod_atividade`) VALUES
-(1, 1),
-(2, 2),
-(3, 3);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `ong`
+-- Estrutura da tabela `ong`
 --
 
 CREATE TABLE `ong` (
@@ -129,24 +112,26 @@ CREATE TABLE `ong` (
   `causas_ong` varchar(300) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `imagem` varchar(100) DEFAULT 'ong.png',
-  `telefone` varchar(45) DEFAULT NULL
+  `telefone` varchar(45) DEFAULT NULL,
+  `local_cod_local1` int(6) NOT NULL,
+  `usuario_cod_user` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `ong`
+-- Extraindo dados da tabela `ong`
 --
 
-INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `local_cod_local`, `causas_ong`, `email`, `imagem`, `telefone`) VALUES
-(1, '218263676.01', 'ONG DO BALACOBACO', 'JUNINHO', 0, 'A GENTE AJUDA UMA GALERA AÍ', 'annalisa.wyatt@massa.com', 'ong.png', ''),
-(2, '12341234', 'planta', 'juty', NULL, '', 'plantar@floreces.com', 'ong.png', NULL),
-(3, '12341234', 'planta', 'juty', NULL, 'plantinhas', 'plantar@floreces.com', 'ong.png', NULL),
-(4, '12341242', 'Do Vini', 'Vini', NULL, 'Esportes', '', 'ong.png', NULL),
-(8, '12356521125', 'Plantenhas', 'Anna', NULL, 'plantas', 'plantenhas@hotmail.com', 'ong.png', NULL);
+INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `local_cod_local`, `causas_ong`, `email`, `imagem`, `telefone`, `local_cod_local1`, `usuario_cod_user`) VALUES
+(1, '218263676.01', 'ONG DO BALACOBACO', 'JUNINHO', 0, 'A GENTE AJUDA UMA GALERA AÍ', 'annalisa.wyatt@massa.com', 'ong.png', '', 0, 33),
+(2, '12341234', 'planta', 'juty', NULL, '', 'plantar@floreces.com', 'ong.png', NULL, 0, 2),
+(3, '12341234', 'planta', 'juty', NULL, 'plantinhas', 'plantar@floreces.com', 'ong.png', NULL, 0, 2),
+(4, '12341242', 'Do Vini', 'Vini', NULL, 'Esportes', '', 'ong.png', NULL, 0, 33),
+(8, '12356521125', 'Plantenhas', 'Anna', NULL, 'plantas', 'plantenhas@hotmail.com', 'ong.png', NULL, 0, 33);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `participacao`
+-- Estrutura da tabela `participacao`
 --
 
 CREATE TABLE `participacao` (
@@ -157,7 +142,7 @@ CREATE TABLE `participacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipo_usuario`
+-- Estrutura da tabela `tipo_usuario`
 --
 
 CREATE TABLE `tipo_usuario` (
@@ -165,10 +150,19 @@ CREATE TABLE `tipo_usuario` (
   `desc_tip_user` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`idtipo_usuario`, `desc_tip_user`) VALUES
+(1, 'Voluntário 1'),
+(2, 'Voluntário 2'),
+(3, 'Administrador');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -181,90 +175,92 @@ CREATE TABLE `usuario` (
   `sexo` varchar(15) DEFAULT NULL,
   `bio` varchar(600) DEFAULT NULL,
   `imagem` varchar(100) DEFAULT 'icon.png',
-  `site` varchar(45) DEFAULT NULL
+  `site` varchar(45) DEFAULT NULL,
+  `tipo_usuario_idtipo_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Fazendo dump de dados para tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `imagem`, `site`) VALUES
-(2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', '', 'icon.png', 'https://www.buzzfeed.com/'),
-(8, '25', 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'icon.png', NULL),
-(16, '123', 'lucas@gmail.com', 'Lucas', 'lusca', '1999-11-10', 'mas', 'Lalalala', 'icon.png', 'www.google.com'),
-(18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela'),
-(30, 'qrovazar', 'Crizu@live.com', 'Eduardo Maia', 'Crizu', '2001-07-22', 'masculino', 'Gosto de ir embora do if, geralmente 2:30, grato', '16.jpg', ''),
-(33, '1234', 'vinibobao@hotmail.com', 'Vinicius Peres', 'vinibobao', '2001-10-24', 'masculino', 'Vinicius Bobao', 'sem_foto.png', ''),
-(34, '123', 'pc@gmail.com', 'PC', 'pcanimus', '1960-02-14', 'masculino', '', '', '');
+INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `sexo`, `bio`, `imagem`, `site`, `tipo_usuario_idtipo_usuario`) VALUES
+(2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', '', 'icon.png', 'https://www.buzzfeed.com/', 1),
+(8, '25', 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'icon.png', NULL, 3),
+(16, '123', 'lucas@gmail.com', 'Lucas', 'lusca', '1999-11-10', 'mas', 'Lalalala', 'icon.png', 'www.google.com', 3),
+(18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela', 3),
+(30, 'qrovazar', 'Crizu@live.com', 'Eduardo Maia', 'Crizu', '2001-07-22', 'masculino', 'Gosto de ir embora do if, geralmente 2:30, grato', '16.jpg', '', 3),
+(33, '1234', 'vinibobao@hotmail.com', 'Vinicius Peres', 'vinibobao', '2001-10-24', 'masculino', 'Vinicius Bobao', 'sem_foto.png', '', 1),
+(34, '123', 'pc@gmail.com', 'PC', 'pcanimus', '1960-02-14', 'masculino', '', '', '', 3);
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `atividades`
+-- Indexes for table `atividades`
 --
 ALTER TABLE `atividades`
   ADD PRIMARY KEY (`cod_atividade`),
-  ADD KEY `fk_atividades_ong1_idx` (`ong_idong`);
+  ADD KEY `fk_atividades_ong1_idx` (`ong_idong`),
+  ADD KEY `fk_atividades_categoria1_idx` (`categoria_cod_categoria`);
 
 --
--- Índices de tabela `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`cod_categoria`);
 
 --
--- Índices de tabela `local`
+-- Indexes for table `local`
 --
 ALTER TABLE `local`
   ADD PRIMARY KEY (`cod_local`);
 
 --
--- Índices de tabela `local_atividade`
---
-ALTER TABLE `local_atividade`
-  ADD KEY `fk_LOCAL_ATIVIDADE_ATIVIDADES1_idx` (`cod_atividade`),
-  ADD KEY `fk_LOCAL_ATIVIDADE_LOCAL1_idx` (`cod_local`);
-
---
--- Índices de tabela `ong`
+-- Indexes for table `ong`
 --
 ALTER TABLE `ong`
   ADD PRIMARY KEY (`idong`),
-  ADD KEY `fk_ong_local1_idx` (`local_cod_local`);
+  ADD KEY `fk_ong_local1_idx` (`local_cod_local`),
+  ADD KEY `fk_ong_local1_idx1` (`local_cod_local1`),
+  ADD KEY `fk_ong_usuario1_idx` (`usuario_cod_user`);
 
 --
--- Índices de tabela `tipo_usuario`
+-- Indexes for table `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   ADD PRIMARY KEY (`idtipo_usuario`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`cod_user`);
+  ADD PRIMARY KEY (`cod_user`),
+  ADD KEY `fk_usuario_tipo_usuario1_idx` (`tipo_usuario_idtipo_usuario`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `cod_categoria` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
--- AUTO_INCREMENT de tabela `ong`
+-- AUTO_INCREMENT for table `ong`
 --
 ALTER TABLE `ong`
   MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
