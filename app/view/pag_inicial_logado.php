@@ -1,6 +1,20 @@
 <?php
 $_GET['item'] = 1;
-require_once "cabecalho.php"; ?>
+require_once "cabecalho.php";
+require_once "../model/CrudVoluntario.php";
+
+$crud = new CrudVoluntario();
+
+session_start();
+
+$existe = isset($_SESSION['usuario_online']);
+
+if ($existe == false){
+    header("location: login.php");
+}
+
+$cod     = $_GET['user'];
+?>
 
 
 <div class="ui six cards">

@@ -18,9 +18,10 @@ class CrudOng{
         $this->conexao = conexao::getConexao();
     }
     public function salvar(Ong $ong){
-        $sql   = "INSERT INTO ong (cnpj, nome_ong, nome_responsavel, causas_ong, email) VALUES ('$ong->cnpj', '$ong->nome_ong', '$ong->nome_resp', '$ong->causas', '$ong->email');)";
+        $sql   = "INSERT INTO ong (cnpj, nome_ong, nome_responsavel, causas_ong, email, usuario_cod_user) VALUES ('$ong->cnpj', '$ong->nome_ong', '$ong->nome_resp', '$ong->causas', '$ong->email', '$ong->cod_vol');)";
 
         $this->conexao->exec($sql);
+        echo $sql;
     }
 
     public function editar(Ong $ong){

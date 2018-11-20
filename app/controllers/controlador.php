@@ -13,7 +13,7 @@
 
     switch ($_GET['acao']){
         case 'cadastrarVol':
-            $usuario = new Voluntario(null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['user'], $_POST['sexo'], $_POST['idade'], null, null, null);
+            $usuario = new Voluntario(null, $_POST['senha'], $_POST['email'], $_POST['nome'], $_POST['user'], $_POST['sexo'], $_POST['idade'], null, null, null, $_POST['tipo_user']);
             $crud    = new CrudVoluntario();
 
             $crud->salvar($usuario);
@@ -55,14 +55,13 @@
         case 'cadastrarOng':
 
             
-            $ong     = new Ong(null, $_POST['cnpj'],$_POST['nome_ong'],$_POST['nome_resp'],null,$_POST['causas'],$_POST['email'],null,$_POST['telefone']);
+            $ong     = new Ong(null, $_POST['cnpj'],$_POST['nome_ong'],$_POST['nome_resp'],null,$_POST['causas'],$_POST['email'],null,$_POST['telefone'], $_POST['user']);
             $crud    = new CrudOng();
 
             $crud->salvar($ong);
 
-
-
-            header('Location: ../view/perfil_ong.php?user='.$cod);
+            print_r($ong);
+            //header('Location: ../view/perfil_ong.php?user='.$cod);
             break;
 
         case 'excluirOng':

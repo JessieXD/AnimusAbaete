@@ -10,8 +10,9 @@ class  Voluntario{
     public $bio;
     public $imagem;
     public $site;
+    public $tipo_user;
 
-    public function __construct($cod_user = null, $senha, $email, $nome, $user, $sexo, $idade, $bio, $imagem, $site){
+    public function __construct($cod_user = null, $senha, $email, $nome, $user, $sexo, $idade, $bio, $imagem, $site, $tipo_user){
 
         $this->cod_user     = $cod_user;
         $this->senha        = $senha;
@@ -23,6 +24,8 @@ class  Voluntario{
         $this->bio          = $bio;
         $this->imagem       = $imagem;
         $this->site         = $site;
+        $this->tipo_user    = $tipo_user;
+
     }
 
 

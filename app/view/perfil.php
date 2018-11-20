@@ -65,5 +65,6 @@ $_GET['item'] = 3;
     </div>
   </div>
 </div>
+<form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarOng">
 
 <?php require_once "rodape.php"; ?>

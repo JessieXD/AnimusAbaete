@@ -19,7 +19,7 @@ class CrudVoluntario{
     }
 
     public function salvar(Voluntario $user){
-        $sql = "INSERT INTO usuario (senha, email, nome, user, sexo, idade) VALUES ('$user->senha', '$user->email', '$user->nome', '$user->user', '$user->sexo', '$user->idade');)";
+        $sql = "INSERT INTO usuario (senha, email, nome, user, sexo, idade, tipo_usuario_idtipo_usuario) VALUES ('$user->senha', '$user->email', '$user->nome', '$user->user', '$user->sexo', '$user->idade','$user->tipo_user');)";
 
         $this->conexao->exec($sql);
     }
@@ -32,7 +32,7 @@ class CrudVoluntario{
         $consulta = $this->conexao->query("SELECT * FROM usuario WHERE cod_user = $cod_user");
         $user = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        return new Voluntario($user['cod_user'], $user['senha'], $user['email'], $user['nome'], $user['user'],  $user['sexo'], $user['idade'],$user['bio'], $user['imagem'], $user['site'] );
+        return new Voluntario($user['cod_user'], $user['senha'], $user['email'], $user['nome'], $user['user'],  $user['sexo'], $user['idade'],$user['bio'], $user['imagem'], $user['site'], $user['tipo_usuario_idtipo_usuario'] );
 
     }
 
