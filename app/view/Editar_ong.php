@@ -4,7 +4,7 @@ $_GET['item'] = 3;
 
     require_once __DIR__ . "/../model/CrudOng.php";
     require_once "cabecalho.php";
-
+/*
     $crud = new CrudOng();
 
     session_start();
@@ -17,7 +17,7 @@ $_GET['item'] = 3;
 
     $cod     = $_GET['user'];
     $usuario = $crud->getVoluntario($cod);
-
+*/
 //    print_r($produto);
 //    exit();
 ?>
@@ -34,9 +34,6 @@ $_GET['item'] = 3;
             </div>
             <div class="field">
                 <input type="text" name="sobre" placeholder="Sobre Nós" value="<?= $usuario->senha ?>"  placeholder="<?= $usuario->senha?>">
-            </div>
-            <div class="field">
-                <input type="email" name="email" placeholder="E-mail" value="<?= $usuario->email ?>"  placeholder="<?= $usuario->email?>">
             </div>
             <div class="field">
                 <input type="file" name="imagem" placeholder="Imagem" >
