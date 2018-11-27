@@ -1,6 +1,6 @@
 <?php
 
-$_GET['item'] = 4;
+$cod     = $_GET['user'];
 require_once 'cabecalho.php';
 /*require_once "../model/CrudOng.php";
 
@@ -15,13 +15,20 @@ if ($existe == false){
     header("location: perfil.php?user=".$usuario);
 }
 
-$cod     = $_GET['user'];
+
 $usuario = $crud->getOng($cod);*/
 
 //    print_r();
 //    exit();
 ?>
-
+    <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+    <a href="procura.php?user=<?=$cod?>" class="item">Procurar</a>
+    <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="active item">Sua ONG</a>
+    <a href="perfil.php?user=<?=$cod?>" class="item">Perfil</a>
+    <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
+    </div>
+    </div>
+    </div>
     <div class="ui three column grid">
         <div class="column">
             <img class="ui small circular image" src="../../imagens/12.jpg"></h1>

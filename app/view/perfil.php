@@ -1,8 +1,6 @@
 <?php
 
-$_GET['item'] = 3;
-
-    require_once "cabecalho.php";
+    //require_once "cabecalho.php";
     require_once "../model/CrudVoluntario.php";
 
     $crud = new CrudVoluntario();
@@ -18,9 +16,20 @@ $_GET['item'] = 3;
     $cod     = $_GET['user'];
     $usuario = $crud->getVoluntario($cod);
 
+    require_once "cabecalho.php";
+
 //    print_r();
 //    exit();
 ?>
+        <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+        <a href="procura.php?user=<?=$cod?>" class="item">Procurar</a>
+        <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="item">Sua ONG</a>
+        <a href="perfil.php?user=<?=$cod?>" class="active item">Perfil</a>
+        <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
+        </div>
+    </div>
+</div>
+
 
 <div class="ui three column grid">
     <div class="column">

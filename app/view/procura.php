@@ -1,13 +1,35 @@
 <?php
-$_GET['item'] = 2;
-require_once 'cabecalho.php'; ?>
-		<div class="ui right aligned category search">
-  			<div class="ui icon input">
-    			<input class="prompt" type="text" placeholder="Procurar ONG...">
-    			<i class="search icon"></i>
-  			</div>
-  			<div class="results"></div>
-		</div>
+require_once "../model/CrudVoluntario.php";
+
+$crud = new CrudVoluntario();
+
+session_start();
+
+$existe = isset($_SESSION['usuario_online']);
+
+if ($existe == false){
+    header("location: login.php");
+}
+
+$cod     = $_GET['user'];
+$usuario = $crud->getVoluntario($cod);
+
+require_once "cabecalho.php"; ?>
+    <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+    <a href="procura.php?user=<?=$cod?>" class="active item">Procurar</a>
+    <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="item">Sua ONG</a>
+    <a href="perfil.php?user=<?=$cod?>" class="item">Perfil</a>
+    <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
+    </div>
+    </div>
+    </div>
+    <div class="ui right aligned category search">
+        <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Procurar ONG...">
+            <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+    </div>
     <br>
     <div class="ui special cards">
         <div class="card">

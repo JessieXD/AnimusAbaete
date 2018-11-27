@@ -25,7 +25,7 @@ class CrudVoluntario{
     }
 
     public function editar(Voluntario $user){
-        $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site' WHERE cod_user = $user->cod_user ");
+        $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site','$user->tipo_user' WHERE cod_user = $user->cod_user ");
     }
 
     public function getVoluntario( $cod_user){
@@ -43,7 +43,7 @@ class CrudVoluntario{
         $listaUsuarios = [];
 
         foreach ($usuarios as $user) {
-            $listaUsuarios [] = new Voluntario($user['cod_user'], $user['senha'], $user['email'], $user['nome'], $user['user'],  $user['sexo'], $user['idade'],$user['bio'], $user['imagem'], $user['site']);
+            $listaUsuarios [] = new Voluntario($user['cod_user'], $user['senha'], $user['email'], $user['nome'], $user['user'],  $user['sexo'], $user['idade'],$user['bio'], $user['imagem'], $user['site'], $user['tipo_usuario_idtipo_usuario']);
         }
 
         return $listaUsuarios;
@@ -52,6 +52,17 @@ class CrudVoluntario{
     {
         //DELETE FROM table_name WHERE condition;
         $this->conexao->query("DELETE FROM usuario WHERE cod_user = $codigo");
+    }
+
+    public function possuiOng($codigo){
+        $consulta = $this->conexao->query("SELECT idong FROM ong where usuario_cod_user = $codigo;");
+        $user = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        if (is_array($user)){
+            return 1;
+        }else{
+            return 2;
+        }
     }
 
 }

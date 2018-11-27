@@ -67,12 +67,21 @@
         case 'entrarOng':
 
             $user = $_GET['user'];
-            $crud = new CrudOng();
+            $crud = new CrudVoluntario();
+            $possui = $crud->possuiOng($user);
 
-            $ong  = $crud->getOngByVol($user);
+            if($possui == 1 ){
+            $crudOng = new CrudOng();
+
+            $ong  = $crudOng->getOngByVol($user);
             $cod  = $ong->cod_user;
 
             header('Location: ../view/perfil_ong.php?user='.$cod);
+            }else{
+                header('Location: ../view/cad_ong.php');
+
+            }
+
             break;
 
         case 'excluirOng':
