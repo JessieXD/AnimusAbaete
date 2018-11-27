@@ -64,6 +64,17 @@
             //header('Location: ../view/perfil_ong.php?user='.$cod);
             break;
 
+        case 'entrarOng':
+
+            $ong     = new Ong(null, $_POST['cnpj'],$_POST['nome_ong'],$_POST['nome_resp'],null,$_POST['causas'],$_POST['email'],null,$_POST['telefone'], $_POST['user']);
+            $crud    = new CrudOng();
+
+            $crud->salvar($ong);
+
+            print_r($ong);
+            //header('Location: ../view/perfil_ong.php?user='.$cod);
+            break;
+
         case 'excluirOng':
             $crud   = new CrudOng();
             $crud->excluirOng($_GET['ong']);
