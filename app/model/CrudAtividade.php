@@ -41,7 +41,7 @@ class CrudAtividade{
 
         return $listaUsuarios;
     }
-    public function excluirAtiv(int $codigo)
+    public function excluirAtividade(int $codigo)
     {
         //DELETE FROM table_name WHERE condition;
         $this->conexao->query("DELETE FROM usuario WHERE cod_ativ = $codigo");
