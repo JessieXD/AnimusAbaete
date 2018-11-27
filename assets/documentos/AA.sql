@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 27/11/2018 às 14:31
+-- Tempo de geração: 27/11/2018 às 17:04
 -- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -167,7 +167,7 @@ CREATE TABLE `usuario` (
   `sexo` varchar(15) DEFAULT NULL,
   `bio` varchar(600) DEFAULT NULL,
   `imagem` varchar(100) DEFAULT 'icon.png',
-  `site` varchar(45) DEFAULT NULL,
+  `site` varchar(100) DEFAULT NULL,
   `tipo_usuario_idtipo_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -179,9 +179,10 @@ INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `s
 (2, '25', 'annalisa.wyatt@massa.com', 'Annalisa Whyatt', 'Anna', '1962-06-29', 'fem', 'eu sou a Anna', 'icon.png', 'https://www.buzzfeed.com/', 1),
 (8, '25', 'gwen.nichols@nam.com', 'Gwen Nichols', 'GG', '1986-10-18', 'mas', 'profissional da saúde', 'icon.png', NULL, 2),
 (16, '123', 'lucas@gmail.com', 'Lucas', 'lusca', '1999-11-10', 'mas', 'Lalalala', 'icon.png', 'www.google.com', 2),
-(18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela', 2),
+(18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela!', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela', 2),
 (30, 'qrovazar', 'Crizu@live.com', 'Eduardo Maia', 'Crizu', '2001-07-22', 'masculino', 'Gosto de ir embora do if, geralmente 2:30, grato', 'icon.png', '', 2),
-(33, '1234', 'vinibobao@hotmail.com', 'Vinicius Peres', 'vinibobao', '2001-10-24', 'masculino', 'Vinicius Bobao', 'sem_foto.png', '', 1);
+(33, '1234', 'vinibobao@hotmail.com', 'Vinicius Peres', 'vinibobao', '2001-10-24', 'masculino', 'Vinicius Bobao', 'icon.png', '', 1),
+(36, '1234', 'lucas@hotmail.com', 'Lucas', 'lusca', '2017-06-04', 'outro', 'olá, sou estudante e estou disposto a doar meu tempo livre para artividades socialista', 'henrique.png', 'https://music.youtube.com', 1);
 
 --
 -- Índices de tabelas apagadas
@@ -240,12 +241,12 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `ong`
 --
 ALTER TABLE `ong`
-  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
