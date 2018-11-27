@@ -21,7 +21,14 @@ $_GET['item'] = 3;
 //    print_r($produto);
 //    exit();
 ?>
-
+<a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+<a href="procura.php?user=<?=$cod?>" class="item">Procurar</a>
+<a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="item">Sua ONG</a>
+<a href="perfil.php?user=<?=$cod?>" class="active item">Perfil</a>
+<a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
+</div>
+</div>
+</div>
     <div class="ui middle aligned center aligned grid">
     <div class="four wide column">
         <br>

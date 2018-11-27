@@ -14,8 +14,7 @@ if ($existe == false){
 $cod     = $_GET['user'];
 $usuario = $crud->getVoluntario($cod);
 
-require_once "cabecalho.php"; ?>
-    <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+require_once "cabecalho.php"; ?><a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
     <a href="procura.php?user=<?=$cod?>" class="active item">Procurar</a>
     <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="item">Sua ONG</a>
     <a href="perfil.php?user=<?=$cod?>" class="item">Perfil</a>
@@ -41,7 +40,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/14.jpg">
+                <img src="../../imagens/logo_gatinho.png">
             </div>
             <div class="content">
                 <a class="header">Team Fu</a>
@@ -65,7 +64,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/13.jpg">
+                <img src="../../imagens/1.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -89,7 +88,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/15.jpg">
+                <img src="../../imagens/15.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -113,7 +112,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/13.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -137,7 +136,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/6.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -161,7 +160,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/7.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -185,7 +184,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/8.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -209,7 +208,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/11.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -233,7 +232,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/9.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>
@@ -257,7 +256,7 @@ require_once "cabecalho.php"; ?>
                         </div>
                     </div>
                 </div>
-                <img src="../../imagens/16.jpg">
+                <img src="../../imagens/5.png">
             </div>
             <div class="content">
                 <a class="header">Team Hess</a>

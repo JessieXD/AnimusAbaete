@@ -25,6 +25,7 @@ require_once "cabecalho.php";
 </div>
 </div>
 <br>
+<br>
 <div class="ui special cards">
     <div class="card">
         <div class="blurring dimmable image">
@@ -35,7 +36,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/14.jpg">
+            <img src="../../imagens/logo_gatinho.png">
         </div>
         <div class="content">
             <a class="header">Team Fu</a>
@@ -59,7 +60,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/13.jpg">
+            <img src="../../imagens/1.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -83,7 +84,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/15.jpg">
+            <img src="../../imagens/15.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -107,7 +108,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/13.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -131,7 +132,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/6.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -155,7 +156,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/7.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -179,7 +180,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/8.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -203,7 +204,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/11.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -227,7 +228,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/9.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -251,7 +252,7 @@ require_once "cabecalho.php";
                     </div>
                 </div>
             </div>
-            <img src="../../imagens/16.jpg">
+            <img src="../../imagens/5.png">
         </div>
         <div class="content">
             <a class="header">Team Hess</a>
@@ -267,32 +268,4 @@ require_once "cabecalho.php";
         </div>
     </div>
 </div>
-</div>
-
 <?php require_once "rodape.php"; ?>
-
-<!--<ul class="bxslider">
-  <li><img src="../../carrossel/images/pic1.jpg" style="width: 100%" /></li>
-  <li><img src="../../carrossel/images/pic2.jpg" style="width: 100%" /></li>
-  <li><img src="../../carrossel/images/pic3.jpg" style="width: 100%" /></li>
-  <li><img src="../../carrossel/images/pic1.jpg" style="width: 100%" /></li>
-</ul>
-
-<script>
-    (document).ready(function(){
-        ('.bxslider').bxSlider({
-            mode: 'horizontal',
-            moveSlides: 1,
-            slideMargin: 0,
-            infiniteLoop: true,
-            slideWidth: 16000,
-            minSlides: 1,
-            maxSlides: 1,
-            speed: 850,
-            auto: true
-        });
-    });
-</script>
-
-
--->

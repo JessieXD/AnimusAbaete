@@ -31,7 +31,7 @@ $usuario = $crud->getOng($cod);*/
     </div>
     <div class="ui three column grid">
         <div class="column">
-            <img class="ui small circular image" src="../../imagens/12.jpg"></h1>
+            <img class="ui small circular image" src="../../imagens/ong.png"></h1>
         </div>
         <div class="column">
             <p></p>
@@ -65,7 +65,7 @@ $usuario = $crud->getOng($cod);*/
                                         </div>
                                     </div>
                                 </div>
-                                <img src="../../imagens/14.jpg">
+                                <img src="../../imagens/1.png">
                             </div>
                             <div class="content">
                                 <a class="header">Team Fu</a>
@@ -89,7 +89,7 @@ $usuario = $crud->getOng($cod);*/
                                         </div>
                                     </div>
                                 </div>
-                                <img src="../../imagens/13.jpg">
+                                <img src="../../imagens/7.png">
                             </div>
                             <div class="content">
                                 <a class="header">Team Hess</a>
@@ -113,7 +113,7 @@ $usuario = $crud->getOng($cod);*/
                                         </div>
                                     </div>
                                 </div>
-                                <img src="../../imagens/15.jpg">
+                                <img src="../../imagens/5.png">
                             </div>
                             <div class="content">
                                 <a class="header">Team Hess</a>
@@ -137,7 +137,7 @@ $usuario = $crud->getOng($cod);*/
                                         </div>
                                     </div>
                                 </div>
-                                <img src="../../imagens/16.jpg">
+                                <img src="../../imagens/11.png">
                             </div>
                             <div class="content">
                                 <a class="header">Team Hess</a>

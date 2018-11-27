@@ -65,9 +65,9 @@
     <div class="ui raised segment">
       <a class="ui blue right ribbon label"><i class="users icon"></i>Ong's</a>
       <p><a class="ui label">
-  		<img class="ui right spaced avatar image" src="../../imagens/1.jpg">Mundo Gato</a>
+  		<img class="ui right spaced avatar image" src="../../imagens/1.png">Futebol do Bem</a>
 		<a class="ui label">
-		<img class="ui right spaced avatar image" src="../../imagens/7.jpg">Ong da Rua</a>
+		<img class="ui right spaced avatar image" src="../../imagens/7.png">Doe Sangue</a>
       </p>
       <p></p>
       <p></p>
