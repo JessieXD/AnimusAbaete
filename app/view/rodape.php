@@ -32,6 +32,8 @@
                         <div class="seven wide right floated column">
                             <h4 class="ui inverted teal header">Animus Abaetê</h4>
                             <p> Um novo jeito de ser voluntário</p>
+                            <p>Software 100% Brasileiro <i class="brazil flag"></i>
+                            </p>
                             <!--<form action="https://www.google.com.br/search?q=teal&oq=teal&aqs=chrome..69i57.1927j0j4&sourceid=chrome&ie=UTF-8" method="post" target="_top">
                             <button type="submit" class="ui large teal button">Botão</button>
                             </form>-->

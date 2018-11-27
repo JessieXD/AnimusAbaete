@@ -32,8 +32,15 @@ class CrudOng{
         $consulta = $this->conexao->query("SELECT * FROM ong WHERE cod_ong = $cod_ong");
         $ong = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        return new Ong($ong['cod_ong'], $ong['cnpj'], $ong['$nome_ong'], $ong['nome_resp'], $ong['local'],  $ong['email'] );
+        return new Ong($ong['idong'], $ong['cnpj'], $ong['nome_ong'], $ong['nome_responsavel'], NULL, $ong['causas_ong'],  $ong['email'],$ong['imagem'], $ong['telefone'], $ong['usuario_cod_user'] );
 
+    }
+
+    public function getOngByVol( $cod_vol){
+        $consulta = $this->conexao->query("SELECT * FROM ong WHERE usuario_cod_user = $cod_vol");
+        $ong = $consulta->fetch(PDO::FETCH_ASSOC);
+                        //$cod_user = null, $cnpj, $nome_ong, $nome_resp, $local, $causas, $email, $imagem, $telefone, $cod_vol
+        return new Ong($ong['idong'], $ong['cnpj'], $ong['nome_ong'], $ong['nome_responsavel'], NULL, $ong['causas_ong'],  $ong['email'],$ong['imagem'], $ong['telefone'], $ong['usuario_cod_user'] );
     }
 
     public function getVoluntarios(){

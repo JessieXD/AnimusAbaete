@@ -8,66 +8,248 @@ require_once 'cabecalho.php'; ?>
   			</div>
   			<div class="results"></div>
 		</div>
-	<div class="ui six cards">
-	  <a class="ui red card" href="perfil_ong.php">
-	    <div class="image">
-	      <img src="../../imagens/12.jpg">
-	    </div>
-	  </a>
-	  <a class="orange card">
-	    <div class="image">
-	      <img src="../../imagens/2.jpg">
-	    </div>
-	  </a>
-	  <a class="yellow card">
-	    <div class="image">
-	      <img src="../../imagens/3.jpg">
-	    </div>
-	  </a>
-	  <a class="olive card">
-	    <div class="image">
-	      <img src="../../imagens/4.jpg">
-	    </div>
-	  </a>
-	  <a class="green card">
-	    <div class="image">
-	      <img src="../../imagens/5.jpg">
-	    </div>
-	  </a>
-	  <a class="teal card">
-	    <div class="image">
-	      <img src="../../imagens/6.jpg">
-	    </div>
-	  </a>
-	  <a class="blue card">
-	    <div class="image">
-	      <img src="../../imagens/7.jpg">
-	    </div>
-	  </a>
-	  <a class="violet card">
-	    <div class="image">
-	      <img src="../../imagens/8.jpg">
-	    </div>
-	  </a>
-	  <a class="purple card">
-	    <div class="image">
-	      <img src="../../imagens/9.jpg">
-	    </div>
-	  </a>
-	  <a class="pink card">
-	    <div class="image">
-	      <img src="../../imagens/10.jpg">
-	    </div>
-	  </a>
-	  <a class="brown card">
-	    <div class="image">
-	      <img src="../../imagens/11.jpg">
-	    </div>
-	  </a>
-	  <a class="grey card" href="perfil_ong.php">
-	    <div class="image">
-	      <img src="../../imagens/1.jpg">
-	    </div>
-	  </a>
-	</div>
+    <br>
+    <div class="ui special cards">
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/14.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Fu</a>
+                <div class="meta">
+                    <span class="date">Created in Sep 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a></br>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/13.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/15.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui inverted dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui primary button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../../imagens/16.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Hess</a>
+                <div class="meta">
+                    <span class="date">Created in Aug 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
 <?php require_once 'rodape.php'; ?>

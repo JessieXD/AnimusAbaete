@@ -51,7 +51,7 @@ if ($existe == false){
                 case 3:
                     echo '<a href="pag_inicial_logado.php?user="'.$user.' class="item">Página Inicial</a>
                           <a href="procura.php?user="'.$user.' class="item">Procurar</a>
-			              <a href="cad_ong.php?user='.$user.'" class="item">Sua ONG</a>
+			              <a href="../controllers/controlador.php?acao=entrarOng&&user=2" class="item">Sua ONG</a>
 			              <a href="perfil.php?user="'.$user.' class="active item">Perfil</a>
 	    	              <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>';
                     break;

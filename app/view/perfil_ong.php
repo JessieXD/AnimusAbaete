@@ -154,10 +154,11 @@ $usuario = $crud->getOng($cod);*/
         <div class=" five wide column">
             <div class="ui raised segment">
                 <a class="ui blue right ribbon label"><i class="info icon"></i>Info</a>
-                <p><a class="ui label">
-                        <img class="ui right spaced avatar image" src="../../imagens/1.jpg">Mundo Gato</a>
-                    <a class="ui label">
-                        <img class="ui right spaced avatar image" src="../../imagens/7.jpg">Ong da Rua</a>
+                <p></p>
+                <p><i class="linkify icon"></i><a</a></p>
+                <p><i class="birthday cake icon"></i></p>
+                <p><i class="map pin icon"></i> </p>
+                <p></p>
                 </p>
                 <p></p>
                 <p></p>
