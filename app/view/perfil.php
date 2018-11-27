@@ -57,7 +57,6 @@
       <p></p>
       <p><i class="linkify icon"></i><a href="<?=$usuario->site?>"><?=$usuario->site?></a></p>
       <p><i class="birthday cake icon"></i><?=$usuario->idade?></p>
-      <p><i class="map pin icon"></i>África do Sul</p>
       <p></p>
     </div>
   </div>

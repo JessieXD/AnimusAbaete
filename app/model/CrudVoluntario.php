@@ -25,7 +25,7 @@ class CrudVoluntario{
     }
 
     public function editar(Voluntario $user){
-        $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site','$user->tipo_user' WHERE cod_user = $user->cod_user ");
+        $this->conexao->exec("UPDATE usuario SET senha = '$user->senha', email = '$user->email', nome = '$user->nome', bio = '$user->bio', imagem = '$user->imagem', site = '$user->site' WHERE cod_user = $user->cod_user ");
     }
 
     public function getVoluntario( $cod_user){
