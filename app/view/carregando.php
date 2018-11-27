@@ -20,6 +20,27 @@
                 </div>
 Carregando...
 
+                <?php
+                require_once '../model/Ong.php';
+                require_once '../model/CrudOng.php';
+                require_once '../model/Voluntario.php';
+                require_once '../model/CrudVoluntario.php';
+
+                $user = $_GET['user'];
+                $crud = new CrudVoluntario();
+                $possui = $crud->possuiOng($user);
+
+                if($possui == 1 ){
+                    $crudOng = new CrudOng();
+
+                    $ong  = $crudOng->getOngByVol($user);
+                    $cod  = $ong->cod_user;
+
+                    header('Location: ../view/perfil_ong.php?user='.$cod);
+                }else{
+                    header('Location: ../view/cad_ong.php?user='.$user);
+
+                }                ?>
             </div>
         </div>
 

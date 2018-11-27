@@ -4,6 +4,7 @@
 	<link rel="stylesheet"  href="../../semantic/semantic.css">
     <meta charset="UTF-8">
 	<title>Cadastro</title>
+    <link rel="icon" href="../../imagens/logo_preta.png" />
 </head>
 <style type="text/css">
     body{
@@ -18,7 +19,7 @@
     <h2 class="ui small circular image">
       <a href="../../index.html"><img src="../../imagens/logo.png" class="image"></a>
     </h2>
-    <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarOng">
+    <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarOng&&user=<?=$_GET['user'] ?>">
       <div class="field">
         <div class="one field">
           <div class="field">

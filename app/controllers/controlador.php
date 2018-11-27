@@ -59,9 +59,9 @@
             $crud    = new CrudOng();
 
             $crud->salvar($ong);
+            $cod     = $_POST['user'];
 
-            print_r($ong);
-            //header('Location: ../view/perfil_ong.php?user='.$cod);
+            header('Location: ../view/carregando.php?user='.$cod);
             break;
 
         case 'entrarOng':
@@ -78,7 +78,7 @@
 
             header('Location: ../view/perfil_ong.php?user='.$cod);
             }else{
-                header('Location: ../view/cad_ong.php');
+                header('Location: ../view/cad_ong.php?user='.$user);
 
             }
 

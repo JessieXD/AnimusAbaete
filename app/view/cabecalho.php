@@ -14,7 +14,8 @@ if ($existe == false){
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet"  href="../../semantic/semantic.css">
-	<!--<link href="carrossel/jquery.bxslider.css" rel="stylesheet" />-->
+    <link rel="icon" href="../../imagens/logo_preta.png" />
+    <!--<link href="carrossel/jquery.bxslider.css" rel="stylesheet" />-->
     <style>
         /* #ta{
             background-color: #71ABBF;

@@ -31,7 +31,6 @@ $usuario = $crud->getOng($cod);*/
     </div>
     <div class="ui three column grid">
         <div class="column">
-            <img class="ui small circular image" src="../../imagens/ong.png"></h1>
         </div>
         <div class="column">
             <p></p>
@@ -44,6 +43,7 @@ $usuario = $crud->getOng($cod);*/
         </div>
 
     </div>
+
 
     <div class="ui grid">
         <div class="eleven wide column">
@@ -151,6 +151,17 @@ $usuario = $crud->getOng($cod);*/
                                     2 Members
                                 </a>
                             </div>
+                        </div>
+                        <div class="card">
+                            <div class="blurring dimmable image">
+                                <h2 class="ui huge circular image">
+                                    <a href="cad_atividade.php"><img src="../../imagens/plus.png" class="image"></a>
+                                </h2>
+                            </div>
+                            <div class="content">
+                                <a class="header">Cadastre uma Atividade</a>
+                            </div>
+
                         </div>
                     </div>
 
