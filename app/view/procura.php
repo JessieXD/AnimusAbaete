@@ -13,15 +13,30 @@ if ($existe == false){
 
 $cod     = $_GET['user'];
 $usuario = $crud->getVoluntario($cod);
+$possui  = $usuario->tipo_user;
 
-require_once "cabecalho.php"; ?><a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+require_once "cabecalho.php";
+
+if ($possui == 1){
+    echo "<a href=\"pag_inicial_logado.php?user=<?=$cod?>\" class=\"item\">Página Inicial</a>
+<a href=\"procura.php?user=<?=$cod?>\" class=\"item\">Procurar</a>
+<a href=\"../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>\" class=\"item\">Sua ONG</a>
+<a href=\"perfil.php?user=<?=$cod?>\" class=\"item\">Perfil</a>
+<a class=\"item\" href=\"../controllers/verificaUser.php?acao=sair\">Sair</a>
+</div>
+</div>
+</div>";
+}else{
+    ?>
+    <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
     <a href="procura.php?user=<?=$cod?>" class="active item">Procurar</a>
-    <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="item">Sua ONG</a>
     <a href="perfil.php?user=<?=$cod?>" class="item">Perfil</a>
     <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
     </div>
     </div>
     </div>
+<?php } ?>
+
     <div class="ui right aligned category search">
         <div class="ui icon input">
             <input class="prompt" type="text" placeholder="Procurar ONG...">

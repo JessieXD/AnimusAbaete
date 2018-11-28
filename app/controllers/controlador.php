@@ -26,7 +26,7 @@
         case 'editar':
 
             if (isset($_POST['imagem'])){
-                $usuario = new Voluntario($_GET['user'],  $_POST['senha'], $_POST['email'], $_POST['nome'], null, null, null, $_POST['bio'], $_POST['imagem'], $_POST['site']);
+                $usuario = new Voluntario($_GET['user'],  $_POST['senha'], $_POST['email'], $_POST['nome'], null, null, null, $_POST['bio'], $_POST['imagem'], $_POST['site'], null);
                 $crud    = new CrudVoluntario();
 
                 $crud->editar($usuario);
@@ -57,7 +57,7 @@
         case 'cadastrarOng':
 
             
-            $ong     = new Ong(null, $_POST['cnpj'],$_POST['nome_ong'],$_POST['nome_resp'],null,$_POST['causas'],$_POST['email'],null,$_POST['telefone'], $_POST['user']);
+            $ong     = new Ong(null, $_POST['cnpj'],$_POST['nome_ong'],$_POST['nome_resp'],null,$_POST['causas'],$_POST['email'],null,$_POST['telefone'], $_POST['user'], null);
             $crud    = new CrudOng();
 
             $crud->salvar($ong);
@@ -114,7 +114,7 @@
 
         case 'excluirOng':
             $crud   = new CrudOng();
-            $crud->excluirOng($_GET['user']);
+            $crud->excluirOng($_GET['cod']);
 
 
             header('Location: verificaUser.php?acao=sair');
@@ -127,7 +127,7 @@
             $codOng  = $ong->cod_user;
 
             $crud    = new CrudAtividade();
-            $ativ    = new Atividade( null, $_POST['descricao'], $_POST['titulo'], $_POST['data'], $_POST['hora'],  $_POST['nro_vagas'], $codOng, null );
+            $ativ    = new Atividade( null, $_POST['descricao'], $_POST['titulo'], $_POST['data'], $_POST['hora'],  $_POST['nro_vagas'], $codOng, null, null );
 
             $crud->salvar($ativ);
 
@@ -135,7 +135,7 @@
             break;
         case 'editarAtividade':
 
-            $ativ    = new Atividade( $_GET['ativ'], $_POST['descricao'], $_POST['titulo'], $_POST['data'], $_POST['hora'],  $_POST['nro_vagas'], $codOng, null );
+            $ativ    = new Atividade( $_GET['ativ'], $_POST['descricao'], $_POST['titulo'], $_POST['data'], $_POST['hora'],  $_POST['nro_vagas'], $codOng, null, $_POST['imagem'] );
             $crud    = new CrudAtividade();
 
             $crud->editar($ativ);

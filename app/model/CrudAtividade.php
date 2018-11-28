@@ -18,14 +18,14 @@ class CrudAtividade{
     }
 
     public function editar(Atividade $ativ){//`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`
-        $this->conexao->exec("UPDATE atividades SET descricao = '$ativ->descricao', titulo = '$ativ->titulo', data = '$ativ->data', hora = '$ativ->hora', nro_vagas = '$ativ->num_vagas' WHERE atividades.cod_atividade = '$ativ->cod_atividade';");
+        $this->conexao->exec("UPDATE atividades SET descricao = '$ativ->descricao', titulo = '$ativ->titulo', data = '$ativ->data', hora = '$ativ->hora', nro_vagas = '$ativ->num_vagas', imagem = '$ativ->imagem' WHERE atividades.cod_atividade = '$ativ->cod_atividade';");
     }
 
     public function getAtividade( $cod_ativ){
         $consulta = $this->conexao->query("SELECT * FROM atividades WHERE cod_atividade = $cod_ativ");
         $ativ = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        return new Atividade($ativ['cod_atividade'], $ativ['descricao'], $ativ['titulo'], $ativ['data'], $ativ['hora'],  $ativ['nro_vagas'], $ativ['ong_idong'], $ativ['categoria_cod_categoria'] );
+        return new Atividade($ativ['cod_atividade'], $ativ['descricao'], $ativ['titulo'], $ativ['data'], $ativ['hora'],  $ativ['nro_vagas'], $ativ['ong_idong'], $ativ['categoria_cod_categoria'], $ativ['imagem']);
 
     }
 
@@ -36,7 +36,7 @@ class CrudAtividade{
         $listaAtividades = [];
 
         foreach ($atividades as $ativ) { //$cod_atividade = NULL, $descricao, $titulo, $data, $hora, $num_vagas, $id_ong, $cod_categoria
-            $listaAtividades [] = new Atividade($ativ['cod_atividade'], $ativ['descricao'], $ativ['titulo'], $ativ['data'], $ativ['hora'],  $ativ['nro_vagas'], $ativ['ong_idong'], $ativ['categoria_cod_categoria']);
+            $listaAtividades [] = new Atividade($ativ['cod_atividade'], $ativ['descricao'], $ativ['titulo'], $ativ['data'], $ativ['hora'],  $ativ['nro_vagas'], $ativ['ong_idong'], $ativ['categoria_cod_categoria'], $ativ['imagem']);
         }
 
         return $listaAtividades;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Nov-2018 às 05:02
+-- Generation Time: 28-Nov-2018 às 13:20
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -36,15 +36,18 @@ CREATE TABLE `atividades` (
   `nro_vagas` int(11) DEFAULT NULL,
   `cod_atividade` int(6) NOT NULL,
   `ong_idong` int(11) NOT NULL,
-  `categoria_cod_categoria` int(6) DEFAULT NULL
+  `categoria_cod_categoria` int(6) DEFAULT NULL,
+  `imagem` varchar(50) NOT NULL DEFAULT 'logo_preta.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `atividades`
 --
 
-INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`, `categoria_cod_categoria`) VALUES
-('Vamos juntos resgatar a histÃ³ria operÃ¡ria da cidade. ', 'Redescobrindo a HistÃ³ria', '2018-06-14', '16:00:00', 12, 2, 3, 0);
+INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`, `categoria_cod_categoria`, `imagem`) VALUES
+('Vamos juntos resgatar a histÃ³ria operÃ¡ria da cidade. ', 'Redescobrindo a HistÃ³ria', '2018-06-14', '16:00:00', 12, 2, 3, 0, 'logo_preta.png'),
+('jantar beneficente em prol dos gatinhos', 'Natal com os felinos', '2018-11-30', '20:30:00', 70, 3, 4, NULL, 'natal.png'),
+('MultirÃ£o para fazer a reforma do gatil Bom Companheiro', 'Ajudar a reformar o gatil Bom Companheiro', '2019-01-10', '13:00:00', 50, 4, 4, NULL, 'gatinhos2.png');
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,8 @@ CREATE TABLE `ong` (
 
 INSERT INTO `ong` (`idong`, `cnpj`, `nome_ong`, `nome_responsavel`, `causas_ong`, `email`, `imagem`, `telefone`, `usuario_cod_user`, `bio`) VALUES
 (1, '218263676.01', 'Ong do Balacobaco', 'Juninho', 'Social', 'annalisa.wyatt@issae.com', '15.png', '1231-1313', 33, 'A gente ajuda uma galera ai'),
-(3, '12341234', '', '', '', '', 'ong.png', '', 2, '');
+(4, '1123123', 'Pelo de gato', 'Ana Bela', 'Animais', 'pelodegato@gmail.com', 'logo_gatinho.png', '34356809', 2, 'OlÃ¡ visitante, somos uma ONG que atua desde de 2010 em prol dos nossos felinos domÃ©sticos. Nossa missÃ£o Ã© proporcionar uma vida saudÃ¡vel para os gatos que sÃ£o abandonados nos gatils da cidade. Junta-se a nÃ³s! #Gatinhos'),
+(5, '12312313', 'Pelo de gato', 'OlÃ¡ visitante, somos uma ONG que atua desde ', 'Animais', 'pelodegato@gmail.com', 'logo_gatinho.png', '34356809', 40, 'OlÃ¡ visitante, somos uma ONG que atua desde de 2010 em prol dos nossos felinos domÃ©sticos. Nossa missÃ£o Ã© proporcionar uma vida saudÃ¡vel para os gatos que sÃ£o abandonados nos gatils da cidade. Junta-se a nÃ³s! #Gatinhos');
 
 -- --------------------------------------------------------
 
@@ -183,7 +187,8 @@ INSERT INTO `usuario` (`cod_user`, `senha`, `email`, `nome`, `user`, `idade`, `s
 (18, '123', 'souomandela@gmail.com', 'Nelson Mandela', 'mandelinha', '2018-12-18', 'masculino', 'Fui Partiu, aonde?  Ã‰ o Mandela!', 'mandela.jpg', 'https://pt.wikipedia.org/wiki/Nelson_Mandela', 2),
 (30, '30', 'Crizu@live.com', 'Eduardo Maia', 'Crizu', '2001-07-22', 'masculino', 'Gosto de ir embora do if, geralmente 2:30, grato', 'icon.png', '', 2),
 (33, '1234', 'vinibobao@hotmail.com', 'Vinicius Peres', 'vinibobao', '2001-10-24', 'masculino', 'Vinicius Bobao', 'icon.png', '', 1),
-(36, '1234', 'lucas@hotmail.com', 'Lucas', 'lusca', '2017-06-04', 'outro', 'olá, sou estudante e estou disposto a doar meu tempo livre para artividades socialista', 'henrique.png', 'https://music.youtube.com', 1);
+(36, '1234', 'lucas@hotmail.com', 'Lucas', 'lusca', '2017-06-04', 'outro', 'olá, sou estudante e estou disposto a doar meu tempo livre para artividades socialista', 'henrique.png', 'https://music.youtube.com', 1),
+(40, '1234', 'anabela22@gmail.com', 'Ana Bela', 'Aninha', '2000-12-15', 'feminino', '\"Empodere uma mulher.\"', 'cad_usuario2.jpeg', 'www.facebook.com/anabela', 1);
 
 --
 -- Indexes for dumped tables
@@ -237,7 +242,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `atividades`
 --
 ALTER TABLE `atividades`
-  MODIFY `cod_atividade` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `cod_atividade` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categoria`
@@ -249,13 +254,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `ong`
 --
 ALTER TABLE `ong`
-  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `cod_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

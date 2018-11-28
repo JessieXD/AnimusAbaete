@@ -26,7 +26,6 @@ $listaAtividades = $crudAtiv->getAtividades($codOng);
 //    exit();
 ?>
     <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
-    <a href="procura.php?user=<?=$cod?>" class="item">Procurar</a>
     <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="active item">Sua ONG</a>
     <a href="perfil.php?user=<?=$cod?>" class="item">Perfil</a>
     <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
@@ -71,7 +70,7 @@ $listaAtividades = $crudAtiv->getAtividades($codOng);
                                         </div>
                                     </div>
                                 </div>
-                                <img src="../../imagens/1.png">
+                                <img src="../../imagens/<?=$atividade->imagem?>">
                             </div>
                             <div class="content">
                                 <a class="header"><?=$atividade->titulo?></a>
@@ -97,9 +96,9 @@ $listaAtividades = $crudAtiv->getAtividades($codOng);
                 <a class="ui blue right ribbon label"><i class="info icon"></i>Info</a>
                 <p></p>
                 <p><i class="linkify icon"></i><?=$ong->email?></p>
+                <p><i class="map pin icon"></i>Nome do Responsavel: <?=$ong->nome_resp?></p>
                 <p><i class="birthday cake icon"></i><?=$ong->causas?></p>
                 <p><i class="map pin icon"></i><?=$ong->telefone?></p>
-                <p><i class="map pin icon"></i><?=$ong->nome_resp?></p>
                 <p></p>
                 </p>
                 <p></p>

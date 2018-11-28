@@ -29,7 +29,7 @@ class CrudOng{
     }
 
     public function getOng($cod_ong){
-        $consulta = $this->conexao->query("SELECT * FROM ong WHERE cod_ong = $cod_ong");
+        $consulta = $this->conexao->query("SELECT * FROM ong WHERE idong = $cod_ong");
         $ong = $consulta->fetch(PDO::FETCH_ASSOC);
 
         return new Ong($ong['idong'], $ong['cnpj'], $ong['nome_ong'], $ong['nome_responsavel'], NULL, $ong['causas_ong'],  $ong['email'],$ong['imagem'], $ong['telefone'], $ong['usuario_cod_user'], $ong['bio'] );
@@ -49,12 +49,12 @@ class CrudOng{
         $listaOngs = [];
 
         foreach ($ongs as $ong) {
-            $listaOngss [] = new Voluntario($ong['cod_ong'], $ong['senha'], $ong['email'], $ong['nome'], $ong['ong'],  $ong['sexo'], $ong['idade'],$ong['bio'], $ong['imagem']);
+            $listaOngs [] = new Ong($ong['idong'], $ong['cnpj'], $ong['nome_ong'], $ong['nome_responsavel'], NULL, $ong['causas_ong'],  $ong['email'],$ong['imagem'], $ong['telefone'], $ong['usuario_cod_user'], $ong['bio'] );
         }
 
         return $listaOngs;
     }
-    public function excluirVol(int $codigo)
+    public function excluirOng(int $codigo)
     {
         //DELETE FROM table_name WHERE condition;
         $this->conexao->query("DELETE FROM ong WHERE cod_ong = $codigo");

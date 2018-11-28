@@ -59,7 +59,7 @@
             <button type="submit" class="ui fluid large blue submit button" >Alterar</button>
             <br>
         </form>
-        <form class="ui large form" method="get" action="../controllers/controlador.php?acao=excluir&&user=<?= $ong->cod_user?>">
+        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=excluirOng&&cod=<?= $ong->cod_user?>">
             <button class="ui fluid large red submit button" >Excluir Conta</button>
             <br>
     </div>

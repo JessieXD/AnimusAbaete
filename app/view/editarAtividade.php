@@ -51,6 +51,9 @@ $ativ = $crudAtiv->getAtividade($codAtiv);
                 <input type="time" name="hora" value="<?= $ativ->hora ?>" placeholder="Hora">
             </div>
             <div class="field">
+                <input type="file" name="imagem" placeholder="Imagem" >
+            </div>
+            <div class="field">
                 <input type="number" name="nro_vagas" value="<?= $ativ->num_vagas ?>" placeholder="Número de Vagas">
             </div>
             <div class="one field">
@@ -62,7 +65,7 @@ $ativ = $crudAtiv->getAtividade($codAtiv);
             <br>
         </form>
         <form class="ui large form" method="post" action="../controllers/controlador.php?acao=excluirAtividade&&user=<?=$cod?>&&ativ=<?= $ativ->cod_atividade?>&&user<?=$cod?>">
-            <button class="ui fluid large red submit button" >Excluir Conta</button>
+            <button class="ui fluid large red submit button" >Excluir Atividade</button>
             <br>
     </div>
 </div>

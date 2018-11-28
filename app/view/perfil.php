@@ -13,22 +13,29 @@
         header("location: login.php");
     }
 
-    $cod     = $_GET['user'];
-    $usuario = $crud->getVoluntario($cod);
+$cod     = $_GET['user'];
+$usuario = $crud->getVoluntario($cod);
+$possui  = $usuario->tipo_user;
 
-    require_once "cabecalho.php";
+require_once "cabecalho.php";
 
-//    print_r();
-//    exit();
-?>
-        <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
-        <a href="procura.php?user=<?=$cod?>" class="item">Procurar</a>
-        <a href="../controllers/controlador.php?acao=entrarOng&&user=<?=$cod?>" class="item">Sua ONG</a>
-        <a href="perfil.php?user=<?=$cod?>" class="active item">Perfil</a>
-        <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
-        </div>
-    </div>
+if ($possui == 1){
+    echo "<a href='pag_inicial_logado.php?user=$cod' class='item'>Página Inicial</a>
+<a href='../controllers/controlador.php?acao=entrarOng&&user=$cod' class='item'>Sua ONG</a>
+<a href='perfil.php?user=$cod' class='active item'>Perfil</a>
+<a class='item' href='../controllers/verificaUser.php?acao=sair'>Sair</a>
 </div>
+</div>
+</div>";
+}else{
+    ?>
+    <a href="pag_inicial_logado.php?user=<?=$cod?>" class="item">Página Inicial</a>
+    <a href="perfil.php?user=<?=$cod?>" class="active item">Perfil</a>
+    <a class="item" href="../controllers/verificaUser.php?acao=sair">Sair</a>
+    </div>
+    </div>
+    </div>
+<?php } ?>
 
 
 <div class="ui three column grid">
