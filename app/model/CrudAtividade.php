@@ -12,41 +12,40 @@ class CrudAtividade{
     }
 
     public function salvar(Atividade $ativ){ //$cod_atividade = NULL, $titulo, $data, $hora, $hora, $num_vagas, $id_ong, $cod_categoria
-        $sql = "INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`, `categoria_cod_categoria`) VALUES ('$ativ->descricao', '$ativ->titulo', '$ativ->data', '$ativ->hora', '$ativ->num_vagas', '$ativ->cod_atividade', '$ativ->id_ong', '$ativ->cod_categoria');";
+        $sql = "INSERT INTO `atividades` (`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`) VALUES ('$ativ->descricao', '$ativ->titulo', '$ativ->data', '$ativ->hora', '$ativ->num_vagas', '$ativ->cod_atividade', '$ativ->id_ong');";
 
         $this->conexao->exec($sql);
     }
 
-    public function editar(Atividade $ativ){//`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`, `ong_idong`, `categoria_cod_categoria`
-        $this->conexao->exec("UPDATE `atividades` SET `descricao` = '$ativ->decricao', `titulo` = '$ativ->titulo', `data` = '$ativ->data', `hora` = '$ativ->hora', `nro_vagas` = '$ativ->num_vagas' cod_ativ = $ativ->cod_atividade ");
+    public function editar(Atividade $ativ){//`descricao`, `titulo`, `data`, `hora`, `nro_vagas`, `cod_atividade`
+        $this->conexao->exec("UPDATE atividades SET descricao = '$ativ->descricao', titulo = '$ativ->titulo', data = '$ativ->data', hora = '$ativ->hora', nro_vagas = '$ativ->num_vagas' WHERE atividades.cod_atividade = '$ativ->cod_atividade';");
     }
 
     public function getAtividade( $cod_ativ){
-        $consulta = $this->conexao->query("SELECT * FROM usuario WHERE cod_ativ = $cod_ativ");
+        $consulta = $this->conexao->query("SELECT * FROM atividades WHERE cod_atividade = $cod_ativ");
         $ativ = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        return new Voluntario($ativ['cod_ativ'], $ativ['senha'], $ativ['email'], $ativ['nome'], $ativ['ativ'],  $ativ['sexo'], $ativ['idade'],$ativ['bio'], $ativ['imagem'], $ativ['site'], $ativ['tipo_usuario_idtipo_usuario'] );
+        return new Atividade($ativ['cod_atividade'], $ativ['descricao'], $ativ['titulo'], $ativ['data'], $ativ['hora'],  $ativ['nro_vagas'], $ativ['ong_idong'], $ativ['categoria_cod_categoria'] );
 
     }
 
-    public function getAtividades(){
-        $consulta = $this->conexao->query("SELECT * FROM usuario");
-        $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    public function getAtividades($ong){
+        $consulta = $this->conexao->query("SELECT * FROM atividades WHERE ong_idong = $ong");
+        $atividades = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-        $listaUsuarios = [];
+        $listaAtividades = [];
 
-        foreach ($usuarios as $ativ) {
-            $listaUsuarios [] = new Voluntario($ativ['cod_ativ'], $ativ['senha'], $ativ['email'], $ativ['nome'], $ativ['ativ'],  $ativ['sexo'], $ativ['idade'],$ativ['bio'], $ativ['imagem'], $ativ['site']);
+        foreach ($atividades as $ativ) { //$cod_atividade = NULL, $descricao, $titulo, $data, $hora, $num_vagas, $id_ong, $cod_categoria
+            $listaAtividades [] = new Atividade($ativ['cod_atividade'], $ativ['descricao'], $ativ['titulo'], $ativ['data'], $ativ['hora'],  $ativ['nro_vagas'], $ativ['ong_idong'], $ativ['categoria_cod_categoria']);
         }
 
-        return $listaUsuarios;
+        return $listaAtividades;
     }
-    public function excluirAtividade(int $codigo)
+    public function excluirAtividade($codigo)
     {
         //DELETE FROM table_name WHERE condition;
-        $this->conexao->query("DELETE FROM usuario WHERE cod_ativ = $codigo");
+        $this->conexao->query("DELETE FROM atividades WHERE atividades.cod_atividade = $codigo");
     }
 
 }
 
-}

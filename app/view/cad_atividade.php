@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet"  href="../../semantic/semantic.css">
     <meta charset="UTF-8">
+    <link rel="icon" href="../../imagens/logo_preta.png" />
     <title>Cadastro</title>
 </head>
 <style type="text/css">
@@ -18,7 +19,14 @@
         <h2 class="ui small circular image">
             <a href="../../index.html"><img src="../../imagens/logo.png" class="image"></a>
         </h2>
-        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarOng">
+        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=cadastrarAtividade&&user=<?=$_GET['user']?>">
+            <div class="field">
+                <div class="one field">
+                    <div class="field">
+                        <input type="text" name="titulo" placeholder="Título">
+                    </div>
+                </div>
+            </div>
             <div class="field">
                 <div class="one field">
                     <div class="field">
@@ -26,13 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="field">
-                <div class="one field">
-                    <div class="field">
-                        <input type="number" name="titulo" placeholder="Títuol">
-                    </div>
-                </div>
-            </div>
+
             <div class="field">
                 <div class="one field">
                     <div class="field">
@@ -43,14 +45,14 @@
             <div class="field">
                 <div class="one field">
                     <div class="field">
-                        <input type="text" name="hora" placeholder="Hora">
+                        <input type="time" name="hora" placeholder="Hora">
                     </div>
                 </div>
             </div>
             <div class="field">
                 <div class="one field">
                     <div class="field">
-                        <input type="email" name="nro_vagas" placeholder="Número de Vagas">
+                        <input type="number" name="nro_vagas" placeholder="Número de Vagas">
                     </div>
                 </div>
             </div>

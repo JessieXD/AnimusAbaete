@@ -2,7 +2,7 @@
 
 class Atividade{
     public $cod_atividade;
-    public $decricao;
+    public $descricao;
     public $titulo;
     public $data;
     public $hora;
@@ -10,10 +10,10 @@ class Atividade{
     public $id_ong;
     public $cod_categoria;
 
-    public function __construct($cod_atividade = NULL, $decricao, $titulo, $data, $hora, $hora, $num_vagas, $id_ong, $cod_categoria){
+    public function __construct($cod_atividade = NULL, $descricao, $titulo, $data, $hora, $num_vagas, $id_ong, $cod_categoria){
 
         $this->cod_atividade = $cod_atividade;
-        $this->decricao      = $decricao;
+        $this->descricao     = $descricao;
         $this->titulo        = $titulo;
         $this->data          = $data;
         $this->hora          = $hora;

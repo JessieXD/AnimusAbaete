@@ -10,7 +10,7 @@ class Conexao {
 
     const HOST      = "localhost";
     const NOMEBANCO = "AA";
-    const USUARIO   = "root";
+    const USUARIO   = "AA";
     const SENHA     = "root";
 
     public static function getConexao(){

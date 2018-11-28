@@ -10,6 +10,8 @@
     require_once '../model/CrudOng.php';
     require_once '../model/Voluntario.php';
     require_once '../model/CrudVoluntario.php';
+    require_once '../model/Atividade.php';
+    require_once '../model/CrudAtividade.php';
 
     switch ($_GET['acao']){
         case 'cadastrarVol':
@@ -76,22 +78,81 @@
             $ong  = $crudOng->getOngByVol($user);
             $cod  = $ong->cod_user;
 
-            header('Location: ../view/perfil_ong.php?user='.$cod);
+            header('Location: ../view/carregando.php?user='.$user);
             }else{
                 header('Location: ../view/cad_ong.php?user='.$user);
 
             }
 
             break;
+        case 'editarOng':
+
+            if (isset($_POST['imagem'])){
+
+                $crud = new CrudOng();
+                $ong1 = $crud->getOngByVol($_GET['user']);
+                $codOng = $ong1->cod_user;
+                $ong = new Ong($codOng, null, $_POST['nome_ong'], $_POST['nome_resp'], null, $_POST['causas'], $_POST['email'], $_POST['imagem'], $_POST['telefone'], null, $_POST['bio']);
+
+                $crud->editar($ong);
+                $cod    = $_GET['user'];
+
+                header('Location: ../view/perfil_ong.php?user='.$cod);
+            }else{
+
+                $imagem  = "ong.png";
+                $crud = new CrudOng();
+                $ong1 = $crud->getOngByVol($_GET['user']);
+                $codOng = $ong1->cod_user;
+                $ong = new Ong($codOng, null, $_POST['nome_ong'], $_POST['nome_resp'], null, $_POST['causas'], $_POST['email'], $imagem, $_POST['telefone'], null, $_POST['bio']);
+
+                $crud->editar($ong);
+                $cod    = $_GET['user'];
+                header('Location: ../view/perfil_ong.php?user='.$cod);
+            }
+            break;
 
         case 'excluirOng':
             $crud   = new CrudOng();
-            $crud->excluirOng($_GET['ong']);
+            $crud->excluirOng($_GET['user']);
 
 
             header('Location: verificaUser.php?acao=sair');
             break;
+        case 'cadastrarAtividade':
 
+            $cod     = $_GET['user'];
+            $crudOng = new CrudOng();
+            $ong     = $crudOng->getOngByVol($cod);
+            $codOng  = $ong->cod_user;
+
+            $crud    = new CrudAtividade();
+            $ativ    = new Atividade( null, $_POST['descricao'], $_POST['titulo'], $_POST['data'], $_POST['hora'],  $_POST['nro_vagas'], $codOng, null );
+
+            $crud->salvar($ativ);
+
+            header('Location: ../view/perfil_ong.php?user='.$cod);
+            break;
+        case 'editarAtividade':
+
+            $ativ    = new Atividade( $_GET['ativ'], $_POST['descricao'], $_POST['titulo'], $_POST['data'], $_POST['hora'],  $_POST['nro_vagas'], $codOng, null );
+            $crud    = new CrudAtividade();
+
+            $crud->editar($ativ);
+            $cod    = $_GET['user'];
+
+            header('Location: ../view/perfil_ong.php?user='.$cod);
+
+            break;
+        case 'excluirAtividade':
+
+            $crud   = new CrudAtividade();
+            $ativ   = $_GET['ativ'];
+            $crud->excluirAtividade($ativ);
+            $cod    = $_GET['user'];
+
+            header('Location: ../view/perfil_ong.php?user='.$cod);
+            break;
         default:
             echo "Página não encontrada";
     }

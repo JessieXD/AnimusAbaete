@@ -36,11 +36,12 @@ Carregando...
                     $ong  = $crudOng->getOngByVol($user);
                     $cod  = $ong->cod_user;
 
-                    header('Location: ../view/perfil_ong.php?user='.$cod);
+                    header('Location: ../view/perfil_ong.php?user='.$user);
                 }else{
                     header('Location: ../view/cad_ong.php?user='.$user);
 
-                }                ?>
+                }
+                ?>
             </div>
         </div>
 

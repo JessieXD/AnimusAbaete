@@ -1,10 +1,8 @@
 <?php
 
-$_GET['item'] = 3;
-
     require_once __DIR__ . "/../model/CrudOng.php";
     require_once "cabecalho.php";
-/*
+
     $crud = new CrudOng();
 
     session_start();
@@ -16,8 +14,8 @@ $_GET['item'] = 3;
     }
 
     $cod     = $_GET['user'];
-    $usuario = $crud->getVoluntario($cod);
-*/
+    $ong = $crud->getOngByVol($cod);
+
 //    print_r($produto);
 //    exit();
 ?>
@@ -33,29 +31,35 @@ $_GET['item'] = 3;
     <div class="four wide column">
         <br>
         <h2 class="ui small circular image">
-            <a href="pag_inicial_logado.php"><img src="../../imagens/<?= $usuario->imagem?>" class="image"></a>
+            <a href="pag_inicial_logado.php"><img src="../../imagens/<?= $ong->imagem?>" class="image"></a>
         </h2>
-        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=editar&&user=<?= $usuario->cod_user?>">
+        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=editarOng&&user=<?= $cod?>">
             <div class="field">
-                <input type="text" name="nome" placeholder="Nome" value="<?= $usuario->nome ?>"  placeholder="<?= $usuario->nome ?>">
+                <input type="text" name="nome_ong" placeholder="Nome da ONG" value="<?= $ong->nome_ong ?>"  placeholder="<?= $ong->nome_ong ?>">
             </div>
             <div class="field">
-                <input type="text" name="sobre" placeholder="Sobre Nós" value="<?= $usuario->senha ?>"  placeholder="<?= $usuario->senha?>">
+                <input type="text" name="nome_resp" placeholder="Nome do responsável" value="<?= $ong->bio ?>"  placeholder="<?= $ong->bio?>">
             </div>
             <div class="field">
                 <input type="file" name="imagem" placeholder="Imagem" >
+            </div><!-- $email-->
+            <div class="field">
+                <input type="text" name="bio" placeholder="Biografia" value="<?= $ong->bio ?>" placeholder="<?= $ong->bio?>">
             </div>
             <div class="field">
-                <input type="text" name="bio" placeholder="Biografia" value="<?= $usuario->bio ?>" placeholder="<?= $usuario->bio?>">
+                <input type="number" name="telefone" placeholder="Telefone" value="<?= $ong->telefone ?>" placeholder="<?= $ong->telefone?>">
             </div>
             <div class="field">
-                <input type="text" name="site" placeholder="Site" value="<?= $usuario->site ?>" placeholder="<?= $usuario->bio?>">
-                <input type="hidden" name="codigo" value="<?= $usuario->cod_user ?>">
+                <input type="email" name="email" placeholder="Email" value="<?= $ong->email ?>" placeholder="<?= $ong->email?>">
+            </div>
+            <div class="field">
+                <input type="text" name="causas" placeholder="Causas da ONG" value="<?= $ong->causas ?>" placeholder="<?= $ong->causas?>">
+                <input type="hidden" name="codigo" value="<?= $ong->cod_user ?>">
             </div>
             <button type="submit" class="ui fluid large blue submit button" >Alterar</button>
             <br>
         </form>
-        <form class="ui large form" method="post" action="../controllers/controlador.php?acao=excluir&&user=<?= $ong->cod_user?>">
+        <form class="ui large form" method="get" action="../controllers/controlador.php?acao=excluir&&user=<?= $ong->cod_user?>">
             <button class="ui fluid large red submit button" >Excluir Conta</button>
             <br>
     </div>
